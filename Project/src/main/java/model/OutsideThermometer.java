@@ -5,15 +5,21 @@ import java.beans.PropertyChangeSupport;
 
 public class OutsideThermometer implements Runnable, PropertyChangeSubject {
     private PropertyChangeSupport property;
-    private int prevTemp = 0;
+    private double prevTemp = 14;
+
+    public OutsideThermometer() {
+        property = new PropertyChangeSupport(this);
+    }
 
     @Override
     public void run() {
-        property.firePropertyChange("external", prevTemp, externalTemperature(prevTemp, -20, 20));
-        try {
-            Thread.sleep(6000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
+        while (true) {
+            property.firePropertyChange("t0", prevTemp, externalTemperature(prevTemp, -20, 20));
+            try {
+                Thread.sleep(6000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
         }
     }
 

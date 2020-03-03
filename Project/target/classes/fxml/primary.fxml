@@ -21,12 +21,12 @@
                <children>
                   <AnchorPane prefHeight="217.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
                      <children>
-                        <Circle fx:id="t0Circle" fill="WHITE" layoutX="169.0" layoutY="100.0" radius="81.0" stroke="#1f9aff" strokeType="INSIDE" strokeWidth="11.0">
+                        <Circle fill="WHITE" layoutX="169.0" layoutY="100.0" radius="81.0" stroke="#1f9aff" strokeType="INSIDE" strokeWidth="11.0">
                            <cursor>
                               <Cursor fx:constant="DEFAULT" />
                            </cursor>
                         </Circle>
-                        <Label fx:id="valueT0" layoutX="135.0" layoutY="59.0" prefHeight="65.0" prefWidth="68.0" text="20">
+                        <Label layoutX="135.0" layoutY="59.0" prefHeight="65.0" prefWidth="68.0" text="20">
                            <font>
                               <Font name="System Bold" size="56.0" />
                            </font>
@@ -43,12 +43,12 @@
                   </AnchorPane>
                   <AnchorPane prefHeight="217.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
                      <children>
-                        <Circle fx:id="t1Circle" fill="WHITE" layoutX="169.0" layoutY="100.0" radius="81.0" stroke="#1f9aff" strokeType="INSIDE" strokeWidth="11.0" AnchorPane.leftAnchor="88.0">
+                        <Circle fill="WHITE" layoutX="169.0" layoutY="100.0" radius="81.0" stroke="#1f9aff" strokeType="INSIDE" strokeWidth="11.0" AnchorPane.leftAnchor="88.0">
                            <cursor>
                               <Cursor fx:constant="DEFAULT" />
                            </cursor>
                         </Circle>
-                        <Label fx:id="valueT1" layoutX="135.0" layoutY="59.0" prefHeight="65.0" prefWidth="68.0" text="20">
+                        <Label layoutX="135.0" layoutY="59.0" prefHeight="65.0" prefWidth="68.0" text="20">
                            <font>
                               <Font name="System Bold" size="56.0" />
                            </font>
@@ -62,12 +62,12 @@
                   </AnchorPane>
                   <AnchorPane prefHeight="216.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
                      <children>
-                        <Circle fx:id="t2Circle" fill="WHITE" layoutX="169.0" layoutY="100.0" radius="81.0" stroke="#1f9aff" strokeType="INSIDE" strokeWidth="11.0">
+                        <Circle fill="WHITE" layoutX="169.0" layoutY="100.0" radius="81.0" stroke="#1f9aff" strokeType="INSIDE" strokeWidth="11.0">
                            <cursor>
                               <Cursor fx:constant="DEFAULT" />
                            </cursor>
                         </Circle>
-                        <Label fx:id="valueT2" layoutX="135.0" layoutY="59.0" prefHeight="65.0" prefWidth="68.0" text="20">
+                        <Label layoutX="135.0" layoutY="59.0" prefHeight="65.0" prefWidth="68.0" text="20">
                            <font>
                               <Font name="System Bold" size="56.0" />
                            </font>
@@ -85,26 +85,26 @@
       </AnchorPane>
       <VBox layoutX="385.0" prefHeight="650.0" prefWidth="68.0">
          <children>
-            <Button fx:id="increaseButton" mnemonicParsing="false" prefHeight="160.0" prefWidth="71.0" style="-fx-background-color: #008aff;">
+            <Button mnemonicParsing="false" prefHeight="160.0" prefWidth="71.0" style="-fx-background-color: #008aff;">
                <VBox.margin>
                   <Insets top="110.0" />
                </VBox.margin>
                <graphic>
                   <ImageView fitHeight="85.0" fitWidth="52.0" preserveRatio="true">
                      <image>
-                        <Image url="@../../images/up-arrow.png" />
+                        <Image url="@../images/up-arrow.png" />
                      </image>
                   </ImageView>
                </graphic>
             </Button>
-            <Button fx:id="decreaseButton" mnemonicParsing="false" prefHeight="160.0" prefWidth="71.0" style="-fx-background-color: #008aff;">
+            <Button mnemonicParsing="false" prefHeight="160.0" prefWidth="71.0" style="-fx-background-color: #008aff;">
                <VBox.margin>
                   <Insets top="110.0" />
                </VBox.margin>
                <graphic>
                   <ImageView fitHeight="103.0" fitWidth="52.0" preserveRatio="true">
                      <image>
-                        <Image url="@../../images/down-arrow.png" />
+                        <Image url="@../images/down-arrow.png" />
                      </image>
                   </ImageView>
                </graphic>
@@ -119,7 +119,7 @@
       <Pane layoutX="658.0" layoutY="231.0" prefHeight="200.0" prefWidth="200.0">
          <children>
             <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#1f93ff00" height="200.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="8.0" width="200.0" />
-            <Label fx:id="powerPosition" layoutX="73.0" layoutY="19.0" prefHeight="162.0" prefWidth="35.0" text="0" textAlignment="CENTER" textFill="#008aff">
+            <Label layoutX="73.0" layoutY="19.0" prefHeight="162.0" prefWidth="35.0" text="0" textAlignment="CENTER" textFill="#008aff">
                <font>
                   <Font name="System Bold" size="94.0" />
                </font>

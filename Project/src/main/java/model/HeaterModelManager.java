@@ -9,18 +9,50 @@ public class HeaterModelManager implements HeaterModel, PropertyChangeListener {
     private Heater heater;
     private final double CRITICAL_HIGH = 20;
     private final double CRITICAL_LOW = -20;
-    private double externalTemp;
+    private double externalTemp = 0;
+    private InternalThermometer t1;
+    private InternalThermometer t2;
 
     public HeaterModelManager() {
         heater = new Heater();
+        heater.addListener("heater", this);
         property = new PropertyChangeSupport(this);
+        OutsideThermometer outT = new OutsideThermometer();
+        outT.addListener("external", this);
+        Thread outside = new Thread(new OutsideThermometer());
+        outside.setDaemon(true);
+        outside.start();
+        t1 = new InternalThermometer("t1", 1);
+        t2 = new InternalThermometer("t2", 7);
+        t1.addListener("t1", this);
+        t2.addListener("t2", this);
+        Thread th1 = new Thread(t1);
+        th1.setDaemon(true);
+        th1.start();
+        Thread th2 = new Thread(t2);
+        th2.setDaemon(true);
+        th2.start();
     }
 
     @Override
     public void propertyChange(PropertyChangeEvent evt) {
         switch(evt.getPropertyName()) {
-            case "external":
+            case "t0":
+                double oldExternalTemp = externalTemp;
                 externalTemp = Double.parseDouble((String) evt.getNewValue());
+                property.firePropertyChange("t0", oldExternalTemp, externalTemp);
+                System.out.println("t0: " + externalTemp);
+                break;
+            case "t1":
+                property.firePropertyChange("t1", -50, Double.parseDouble((String) evt.getNewValue()));
+                break;
+            case "t2":
+                property.firePropertyChange("t2", -50, Double.parseDouble((String) evt.getNewValue()));
+                break;
+            case "heater":
+                property.firePropertyChange("heater", -1, heater.status());
+                t1.changeHeaterMode(heater.status());
+                t2.changeHeaterMode(heater.status());
                 break;
         }
     }
