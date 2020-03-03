@@ -16,5 +16,13 @@ public class HeaterModelManager implements HeaterModel{
         property.removePropertyChangeListener(evtid, listener);
     }
 
+    public void heaterUp() {
+
+    }
+
+    public void heaterDown() {
+
+    }
+
 
 }
