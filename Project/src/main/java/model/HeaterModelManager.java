@@ -27,8 +27,13 @@ public class HeaterModelManager implements HeaterModel, PropertyChangeListener {
             case "external":
                 double oldExternalTemp = externalTemp;
                 externalTemp = Double.parseDouble((String) evt.getNewValue());
-                property.firePropertyChange("ext", oldExternalTemp, externalTemp);
-//                System.out.println(externalTemp);
+                property.firePropertyChange("t0", oldExternalTemp, externalTemp);
+                System.out.println("t0: " + externalTemp);
+                break;
+            case "t1": break;
+            case "t2": break;
+            case "heater":
+                property.firePropertyChange("heater", -1, heater.status());
                 break;
         }
     }
