@@ -12,7 +12,7 @@ public class HeaterPosition2 extends HeaterState
   public void down(Heater heater){
     heater.setState(new HeaterPosition1(heater));
   }
-  public String status(){
-    return "Heater position 2";
+  public int status(){
+    return 2;
   }
 }
