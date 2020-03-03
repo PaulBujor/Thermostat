@@ -1,7 +1,8 @@
-package org.openjfx;
+package view;
 
 import java.io.IOException;
 import javafx.fxml.FXML;
+import 
 
 public class PrimaryController {
 
