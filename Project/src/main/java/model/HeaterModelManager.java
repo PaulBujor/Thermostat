@@ -36,7 +36,7 @@ public class HeaterModelManager implements HeaterModel, PropertyChangeListener {
     @Override
     public void propertyChange(PropertyChangeEvent evt) {
         switch(evt.getPropertyName()) {
-            case "external":
+            case "t0":
                 double oldExternalTemp = externalTemp;
                 externalTemp = Double.parseDouble((String) evt.getNewValue());
                 property.firePropertyChange("t0", oldExternalTemp, externalTemp);
@@ -44,9 +44,12 @@ public class HeaterModelManager implements HeaterModel, PropertyChangeListener {
                 break;
             case "t1":
                 break;
-            case "t2": break;
+            case "t2":
+                break;
             case "heater":
                 property.firePropertyChange("heater", -1, heater.status());
+                t1.changeHeaterMode(heater.status());
+                t2.changeHeaterMode(heater.status());
                 break;
         }
     }

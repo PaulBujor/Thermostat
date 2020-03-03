@@ -13,11 +13,13 @@ public class OutsideThermometer implements Runnable, PropertyChangeSubject {
 
     @Override
     public void run() {
-        property.firePropertyChange("external", prevTemp, externalTemperature(prevTemp, -20, 20));
-        try {
-            Thread.sleep(6000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
+        while (true) {
+            property.firePropertyChange("t0", prevTemp, externalTemperature(prevTemp, -20, 20));
+            try {
+                Thread.sleep(6000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
         }
     }
 

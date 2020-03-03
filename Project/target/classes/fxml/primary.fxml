@@ -92,7 +92,7 @@
                <graphic>
                   <ImageView fitHeight="85.0" fitWidth="52.0" preserveRatio="true">
                      <image>
-                        <Image url="@../../images/up-arrow.png" />
+                        <Image url="@../images/up-arrow.png" />
                      </image>
                   </ImageView>
                </graphic>
@@ -104,7 +104,7 @@
                <graphic>
                   <ImageView fitHeight="103.0" fitWidth="52.0" preserveRatio="true">
                      <image>
-                        <Image url="@../../images/down-arrow.png" />
+                        <Image url="@../images/down-arrow.png" />
                      </image>
                   </ImageView>
                </graphic>
