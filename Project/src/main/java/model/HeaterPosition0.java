@@ -2,7 +2,7 @@ package model;
 
 public class HeaterPosition0 extends HeaterState
 {
-  public HeaterPosition0(){
+  public HeaterPosition0(Heater heater){
 
   }
   public void up(Heater heater){
