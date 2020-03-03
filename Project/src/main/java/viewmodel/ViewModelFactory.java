@@ -1,13 +1,13 @@
 package viewmodel;
 
-import model.Heater;
+import model.HeaterModel;
 
 public class ViewModelFactory
 {
   private MainViewModel mainViewModel;
 
-  public ViewModelFactory(Heater heater){
-    this.mainViewModel = new MainViewModel(heater);
+  public ViewModelFactory(HeaterModel model){
+    this.mainViewModel = new MainViewModel(model);
   }
 
   public MainViewModel getHeaterViewModel(){
