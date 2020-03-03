@@ -1,4 +1,7 @@
 package model;
 
-public interface HeaterModel {
+import java.beans.PropertyChangeListener;
+
+public interface HeaterModel extends PropertyChangeSubject {
+
 }
