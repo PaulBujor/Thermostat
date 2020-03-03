@@ -11,7 +11,7 @@ public class ViewHandler
   private Scene currentScene;
   private Stage primaryStage;
   private ViewModelFactory viewModelFactory;
-  private HeatViewController heatViewController;
+  private PrimaryController primaryController;
 
   public ViewHandler(ViewModelFactory viewModelFactory)
   {
@@ -54,15 +54,15 @@ public class ViewHandler
 
   private Region loadHeatView(String fxmlFile)
   {
-    if (heatViewController == null)
+    if (primaryController == null)
     {
       try
       {
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(getClass().getResource(fxmlFile));
         Region root = loader.load();
-        heatViewController = loader.getController();
-        heatViewController
+        primaryController = loader.getController();
+        primaryController
             .init(this, viewModelFactory.getHeaterViewModel(), root);
       }
       catch (Exception e)
@@ -72,8 +72,8 @@ public class ViewHandler
     }
     else
     {
-      heatViewController.reset();
+      primaryController.reset();
     }
-    return heatViewController.getRoot();
+    return primaryController.getRoot();
   }
 }
