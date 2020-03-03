@@ -9,18 +9,26 @@ public class HeaterModelManager implements HeaterModel, PropertyChangeListener {
     private Heater heater;
     private final double CRITICAL_HIGH = 20;
     private final double CRITICAL_LOW = -20;
-    private double externalTemp;
+    private double externalTemp = 0;
 
     public HeaterModelManager() {
         heater = new Heater();
         property = new PropertyChangeSupport(this);
+        OutsideThermometer outT = new OutsideThermometer();
+        outT.addListener("external", this);
+        Thread outside = new Thread(new OutsideThermometer());
+        outside.setDaemon(true);
+        outside.start();
     }
 
     @Override
     public void propertyChange(PropertyChangeEvent evt) {
         switch(evt.getPropertyName()) {
             case "external":
+                double oldExternalTemp = externalTemp;
                 externalTemp = Double.parseDouble((String) evt.getNewValue());
+                property.firePropertyChange("ext", oldExternalTemp, externalTemp);
+//                System.out.println(externalTemp);
                 break;
         }
     }

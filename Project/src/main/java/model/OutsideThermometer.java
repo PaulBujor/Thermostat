@@ -5,7 +5,7 @@ import java.beans.PropertyChangeSupport;
 
 public class OutsideThermometer implements Runnable, PropertyChangeSubject {
     private PropertyChangeSupport property;
-    private int prevTemp = 0;
+    private double prevTemp = 14;
 
     @Override
     public void run() {
