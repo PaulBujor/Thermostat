@@ -94,7 +94,10 @@ public class PrimaryController {
 
     }
 
-
+    public Region getRoot()
+    {
+        return root;
+    }
 
     @FXML
     private void switchToSecondary() throws IOException {
