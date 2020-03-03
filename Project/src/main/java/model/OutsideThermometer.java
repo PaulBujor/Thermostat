@@ -7,6 +7,10 @@ public class OutsideThermometer implements Runnable, PropertyChangeSubject {
     private PropertyChangeSupport property;
     private double prevTemp = 14;
 
+    public OutsideThermometer() {
+        property = new PropertyChangeSupport(this);
+    }
+
     @Override
     public void run() {
         property.firePropertyChange("external", prevTemp, externalTemperature(prevTemp, -20, 20));
