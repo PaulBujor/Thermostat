@@ -17,7 +17,7 @@ state.down(this);
   public void setState(HeaterState state){
     this.state = state;
   }
-  public String status(){
+  public int status(){
     return state.status();
   }
 }
