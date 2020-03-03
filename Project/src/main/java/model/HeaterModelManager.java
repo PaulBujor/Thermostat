@@ -15,6 +15,7 @@ public class HeaterModelManager implements HeaterModel, PropertyChangeListener {
 
     public HeaterModelManager() {
         heater = new Heater();
+        heater.addListener("heater", this);
         property = new PropertyChangeSupport(this);
         OutsideThermometer outT = new OutsideThermometer();
         outT.addListener("external", this);
@@ -43,8 +44,10 @@ public class HeaterModelManager implements HeaterModel, PropertyChangeListener {
                 System.out.println("t0: " + externalTemp);
                 break;
             case "t1":
+                property.firePropertyChange("t1", -50, Double.parseDouble((String) evt.getNewValue()));
                 break;
             case "t2":
+                property.firePropertyChange("t2", -50, Double.parseDouble((String) evt.getNewValue()));
                 break;
             case "heater":
                 property.firePropertyChange("heater", -1, heater.status());
