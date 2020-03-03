@@ -7,24 +7,35 @@ public class HeaterPosition3 extends HeaterState
 
 
   public HeaterPosition3(Heater heater){
+    timeOutThread = new Thread(()->{
+      try{
+        Thread.sleep(40000);
+        timeOut(heater);
+      }
+      catch (InterruptedException e){
+        System.out.println("Time out interrupted");
+      }
+    });
+    timeOutThread.start();
   }
 
-  public void down(Heater heater){
-    heater.setState(new HeaterPosition2(heater));
+  public synchronized void down(Heater heater){
+    if(!completed)
+    {
+completed = true;
+timeOutThread.interrupt();
+      heater.setState(new HeaterPosition2(heater));
+    }
   }
 
-  public void timeOut(Heater heater){
-timeOutThread = new Thread(()->{
-  try{
-    Thread.sleep(40000);
-    timeOut(heater);
+  public synchronized void timeOut(Heater heater){
+if(!completed){
+  completed=true;
+
+  heater.setState(new HeaterPosition2(heater));
+}
   }
-  catch (InterruptedException e){
-    System.out.println("Time out interrupted");
-  }
-});
-timeOutThread.start();
-  }
+
   public int status(){
     return 3;
   }
