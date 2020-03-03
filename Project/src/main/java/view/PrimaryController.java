@@ -42,12 +42,16 @@ public class PrimaryController {
     private Label powerPosition;
 
     private Region root;
-/*    private ViewHandler viewHandler;*/
+    private ViewHandler viewHandler;
     private MainViewModel viewModel;
 
 
 
-    public void init() {
+    public void init(ViewHandler viewHandler, MainViewModel viewModel, Region root) {
+        this.viewHandler = viewHandler;
+        this.viewModel = viewModel;
+        this.root = root;
+
         Bindings.bindBidirectional(valueT0.textProperty(), viewModel.t0Property(), new StringIntegerConverter(0));
         Bindings.bindBidirectional(valueT1.textProperty(), viewModel.t1Property(), new StringIntegerConverter(0));
         Bindings.bindBidirectional(valueT2.textProperty(), viewModel.t2Property(), new StringIntegerConverter(0));
@@ -92,6 +96,19 @@ public class PrimaryController {
 
 
 
+    }
+
+    public void reset()
+    {
+        valueT0.setText("0");
+        valueT1.setText("0");
+        valueT2.setText("0");
+        powerPosition.setText("0");
+    }
+
+    public Region getRoot()
+    {
+        return this.root;
     }
 
 
