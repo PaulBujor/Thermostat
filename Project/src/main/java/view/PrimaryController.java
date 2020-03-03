@@ -2,7 +2,7 @@ package view;
 
 import java.io.IOException;
 import javafx.fxml.FXML;
-import 
+import
 
 public class PrimaryController {
 
