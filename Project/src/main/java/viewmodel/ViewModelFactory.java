@@ -4,13 +4,13 @@ import model.Heater;
 
 public class ViewModelFactory
 {
-  private HeatViewModel heaterViewModel;
+  private MainViewModel mainViewModel;
 
   public ViewModelFactory(Heater heater){
-    this.heaterViewModel = new HeatViewModel(heater);
+    this.mainViewModel = new MainViewModel(heater);
   }
 
-  public HeatViewModel getHeaterViewModel(){
-    return heaterViewModel;
+  public MainViewModel getHeaterViewModel(){
+    return mainViewModel;
   }
 }
