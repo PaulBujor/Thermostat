@@ -74,7 +74,7 @@ public class MainViewModel implements PropertyChangeListener {
                     heaterState.setValue((Integer) evt.getNewValue());
                     break;
             }
+            System.out.printf("T0: %.2f\nT1: %.2f\nT2: %.2f\nState: %d\n________________________\n",t0.get(), t1.get(), t2.get(), heaterState.get());
         });
-//        System.out.printf("T0: %.2f\nT1: %.2f\nT2: %.2f.\nState: %d\n________________________\n",t0.get(), t1.get(), t2.get(), heaterState.get());
     }
 }

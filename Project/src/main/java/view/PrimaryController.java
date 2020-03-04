@@ -63,39 +63,36 @@ public class PrimaryController {
         increaseButton.setOnAction((evt) -> viewModel.increaseTemperature());
         decreaseButton.setOnAction((evt) -> viewModel.decreaseTemperature());
 
+        //TODO move these to viewmodel, add listener to color variable or something
+        viewModel.t0Property().addListener((evt, oldVal, newVal) -> {
+            if (viewModel.t0Property().get() <= 0) {
+                t0Circle.setStroke(Color.rgb(31, 154, 255));
+                t0Circle.setOpacity(viewModel.t0Property().get() / 20);
+            } else {
+                t0Circle.setStroke(Color.rgb(255, 33, 33));
+                t0Circle.setOpacity(viewModel.t0Property().get() / 20);
+            }
+        });
 
-      /*  if (viewModel.t0Property().get() <= 0)
-        {
-            t0Circle.setStroke(Color.rgb(31, 154, 255));
-            t0Circle.setOpacity(viewModel.t0Property().get() / 20);
-        }
-        else
-        {
-            t0Circle.setStroke(Color.rgb(255,33,33));
-            t0Circle.setOpacity(viewModel.t0Property().get() / 20);
-        }
+        viewModel.t1Property().addListener((evt, oldVal, newVal) -> {
+            if (viewModel.t1Property().get() <= 0) {
+                t1Circle.setStroke(Color.rgb(31, 154, 255));
+                t1Circle.setOpacity(viewModel.t1Property().get() / 20);
+            } else {
+                t1Circle.setStroke(Color.rgb(255, 33, 33));
+                t1Circle.setOpacity(viewModel.t1Property().get() / 20);
+            }
+        });
 
-        if (viewModel.t1Property().get() <= 0)
-        {
-            t1Circle.setStroke(Color.rgb(31, 154, 255));
-            t1Circle.setOpacity(viewModel.t1Property().get() / 20);
-        }
-        else
-        {
-            t1Circle.setStroke(Color.rgb(255,33,33));
-            t1Circle.setOpacity(viewModel.t1Property().get() / 20);
-        }
-
-        if (viewModel.t2Property().get() <= 0)
-        {
-            t2Circle.setStroke(Color.rgb(31, 154, 255));
-            t2Circle.setOpacity(viewModel.t2Property().get() / 20);
-        }
-        else
-        {
-            t2Circle.setStroke(Color.rgb(255,33,33));
-            t2Circle.setOpacity(viewModel.t2Property().get() / 20);
-        }*/
+        viewModel.t2Property().addListener((evt, oldVal, newVal) -> {
+            if (viewModel.t2Property().get() <= 0) {
+                t2Circle.setStroke(Color.rgb(31, 154, 255));
+                t2Circle.setOpacity(viewModel.t2Property().get() / 20);
+            } else {
+                t2Circle.setStroke(Color.rgb(255, 33, 33));
+                t2Circle.setOpacity(viewModel.t2Property().get() / 20);
+            }
+        });
     }
 
     public void reset() {
