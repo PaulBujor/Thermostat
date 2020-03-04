@@ -2,6 +2,7 @@ package view;
 
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Region;
 import javafx.stage.Stage;
 import viewmodel.ViewModelFactory;
@@ -52,8 +53,7 @@ public class ViewHandler {
         Region root = null;
         if (primaryController == null) {
             try {
-                FXMLLoader loader = new FXMLLoader();
-                loader.setLocation(getClass().getResource("/fxml/" + fxmlFile));
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/" + fxmlFile));
                 root = loader.load();
                 primaryController = loader.getController();
                 primaryController.init(this, viewModelFactory.getHeaterViewModel(), root);

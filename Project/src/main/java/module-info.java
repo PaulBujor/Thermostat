@@ -4,5 +4,6 @@ module app {
     requires java.desktop;
 
     opens app to javafx.fxml;
+    opens view to javafx.fxml;
     exports app;
 }

@@ -61,13 +61,13 @@ public class MainViewModel implements PropertyChangeListener {
     public void propertyChange(PropertyChangeEvent evt) {
         switch (evt.getPropertyName())
         {
-            case "t0": t0.setValue(Double.parseDouble((String) evt.getNewValue()));
+            case "t0": t0.setValue((Double) evt.getNewValue());
             break;
-            case "t1": t1.setValue(Double.parseDouble((String) evt.getNewValue()));
+            case "t1": t1.setValue((Double) evt.getNewValue());
             break;
-            case "t2": t2.setValue(Double.parseDouble((String) evt.getNewValue()));
+            case "t2": t2.setValue((Double) evt.getNewValue());
             break;
-            case "heater": heaterState.setValue(Double.parseDouble((String) evt.getNewValue()));
+            case "heater": heaterState.setValue((Integer) evt.getNewValue());
             break;
         }
 

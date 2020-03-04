@@ -47,7 +47,8 @@ public class PrimaryController {
     private ViewHandler viewHandler;
     private MainViewModel viewModel;
 
-
+    public PrimaryController() {
+    }
 
     public void init(ViewHandler viewHandler, MainViewModel viewModel, Region root) {
         this.viewHandler = viewHandler;
@@ -97,16 +98,14 @@ public class PrimaryController {
         }*/
     }
 
-    public void reset()
-    {
+    public void reset() {
         valueT0.setText("0");
         valueT1.setText("0");
         valueT2.setText("0");
         powerPosition.setText("0");
     }
 
-    public Region getRoot()
-    {
+    public Region getRoot() {
         return this.root;
     }
 
