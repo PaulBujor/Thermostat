@@ -55,9 +55,9 @@ public class PrimaryController {
         this.viewModel = viewModel;
         this.root = root;
 
-        Bindings.bindBidirectional(valueT0.textProperty(), viewModel.t0Property(), new StringDoubleConverter(0));
-        Bindings.bindBidirectional(valueT1.textProperty(), viewModel.t1Property(), new StringDoubleConverter(0));
-        Bindings.bindBidirectional(valueT2.textProperty(), viewModel.t2Property(), new StringDoubleConverter(0));
+        Bindings.bindBidirectional(valueT0.textProperty(), viewModel.t0Property(), new StringDoubleConverter(10));
+        Bindings.bindBidirectional(valueT1.textProperty(), viewModel.t1Property(), new StringDoubleConverter(10));
+        Bindings.bindBidirectional(valueT2.textProperty(), viewModel.t2Property(), new StringDoubleConverter(10));
         Bindings.bindBidirectional(powerPosition.textProperty(), viewModel.heaterStateProperty(), new StringIntegerConverter(0));
 
         increaseButton.setOnAction((evt) -> viewModel.increaseTemperature());

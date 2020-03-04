@@ -12,7 +12,7 @@ public class StringIntegerConverter extends StringConverter<Number> {
     @Override
     public String toString(Number n) {
         if (n == null || n.intValue() == emptyValue) {
-            return "";
+            return "0";
         }
         return n.toString();
     }
