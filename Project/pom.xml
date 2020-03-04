@@ -1,12 +1,11 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    <groupId>org.openjfx</groupId>
+    <groupId>assignment</groupId>
     <artifactId>SDJ2</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>1.0</version>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <maven.compiler.release>11</maven.compiler.release>
         <javafx.version>13.0.1</javafx.version>
     </properties>
     <dependencies>
@@ -15,6 +14,7 @@
             <artifactId>javafx-controls</artifactId>
             <version>${javafx.version}</version>
         </dependency>
+
         <dependency>
             <groupId>org.openjfx</groupId>
             <artifactId>javafx-fxml</artifactId>
@@ -26,6 +26,7 @@
             <artifactId>javafx-base</artifactId>
             <version>${javafx.version}</version>
         </dependency>
+
 
     </dependencies>
     <build>
@@ -41,9 +42,9 @@
             <plugin>
                 <groupId>org.openjfx</groupId>
                 <artifactId>javafx-maven-plugin</artifactId>
-                <version>0.0.1</version>
+                <version>0.0.3</version>
                 <configuration>
-                    <mainClass>App</mainClass>
+                    <mainClass>app.App</mainClass>
                 </configuration>
             </plugin>
         </plugins>

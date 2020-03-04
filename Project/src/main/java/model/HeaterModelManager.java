@@ -1,5 +1,9 @@
 package model;
 
+import model.heater.Heater;
+import model.thermometer.InternalThermometer;
+import model.thermometer.OutsideThermometer;
+
 import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
 import java.beans.PropertyChangeSupport;
@@ -15,22 +19,22 @@ public class HeaterModelManager implements HeaterModel, PropertyChangeListener {
 
     public HeaterModelManager() {
         heater = new Heater();
-        heater.addListener("heater", this);
         property = new PropertyChangeSupport(this);
         OutsideThermometer outT = new OutsideThermometer();
-        outT.addListener("external", this);
         Thread outside = new Thread(new OutsideThermometer());
-        outside.setDaemon(true);
-        outside.start();
+        Thread th1 = new Thread(t1);
+        Thread th2 = new Thread(t2);
         t1 = new InternalThermometer("t1", 1);
         t2 = new InternalThermometer("t2", 7);
+        heater.addListener("heater", this);
+        outT.addListener("external", this);
         t1.addListener("t1", this);
         t2.addListener("t2", this);
-        Thread th1 = new Thread(t1);
+        outside.setDaemon(true);
         th1.setDaemon(true);
-        th1.start();
-        Thread th2 = new Thread(t2);
         th2.setDaemon(true);
+        outside.start();
+        th1.start();
         th2.start();
     }
 
@@ -39,15 +43,15 @@ public class HeaterModelManager implements HeaterModel, PropertyChangeListener {
         switch(evt.getPropertyName()) {
             case "t0":
                 double oldExternalTemp = externalTemp;
-                externalTemp = Double.parseDouble((String) evt.getNewValue());
+                externalTemp = (Double) evt.getNewValue();
                 property.firePropertyChange("t0", oldExternalTemp, externalTemp);
                 System.out.println("t0: " + externalTemp);
                 break;
             case "t1":
-                property.firePropertyChange("t1", -50, Double.parseDouble((String) evt.getNewValue()));
+                property.firePropertyChange("t1", -50, evt.getNewValue());
                 break;
             case "t2":
-                property.firePropertyChange("t2", -50, Double.parseDouble((String) evt.getNewValue()));
+                property.firePropertyChange("t2", -50, evt.getNewValue());
                 break;
             case "heater":
                 property.firePropertyChange("heater", -1, heater.status());

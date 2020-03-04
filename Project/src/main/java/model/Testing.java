@@ -1,5 +1,7 @@
 package model;
 
+import model.heater.Heater;
+
 public class Testing
 {
 

@@ -9,6 +9,8 @@ import javafx.scene.control.Label;
 import javafx.scene.layout.Region;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
+import utility.StringDoubleConverter;
+import utility.StringIntegerConverter;
 import viewmodel.MainViewModel;
 
 
@@ -52,16 +54,16 @@ public class PrimaryController {
         this.viewModel = viewModel;
         this.root = root;
 
-        Bindings.bindBidirectional(valueT0.textProperty(), viewModel.t0Property(), new StringIntegerConverter(0));
-        Bindings.bindBidirectional(valueT1.textProperty(), viewModel.t1Property(), new StringIntegerConverter(0));
-        Bindings.bindBidirectional(valueT2.textProperty(), viewModel.t2Property(), new StringIntegerConverter(0));
+        Bindings.bindBidirectional(valueT0.textProperty(), viewModel.t0Property(), new StringDoubleConverter(0));
+        Bindings.bindBidirectional(valueT1.textProperty(), viewModel.t1Property(), new StringDoubleConverter(0));
+        Bindings.bindBidirectional(valueT2.textProperty(), viewModel.t2Property(), new StringDoubleConverter(0));
         Bindings.bindBidirectional(powerPosition.textProperty(), viewModel.heaterStateProperty(), new StringIntegerConverter(0));
 
         increaseButton.setOnAction((evt) -> viewModel.increaseTemperature());
         decreaseButton.setOnAction((evt) -> viewModel.decreaseTemperature());
 
 
-        if (viewModel.t0Property().get() <= 0)
+      /*  if (viewModel.t0Property().get() <= 0)
         {
             t0Circle.setStroke(Color.rgb(31, 154, 255));
             t0Circle.setOpacity(viewModel.t0Property().get() / 20);
@@ -92,10 +94,7 @@ public class PrimaryController {
         {
             t2Circle.setStroke(Color.rgb(255,33,33));
             t2Circle.setOpacity(viewModel.t2Property().get() / 20);
-        }
-
-
-
+        }*/
     }
 
     public void reset()
@@ -110,8 +109,6 @@ public class PrimaryController {
     {
         return this.root;
     }
-
-
 
     @FXML
     private void switchToSecondary() throws IOException {
