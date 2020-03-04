@@ -6,20 +6,20 @@ import java.beans.PropertyChangeSupport;
 public class Heater implements PropertyChangeSubject
 {
   private HeaterState state;
-  private PropertyChangeSupport propertyChangeSupport;
+  private PropertyChangeSupport property;
 
   public Heater(){
     this.state = new HeaterPosition0(this);
-    propertyChangeSupport = new PropertyChangeSupport(this);
+    property = new PropertyChangeSupport(this);
   }
 
   public void up(){
 state.up(this);
-propertyChangeSupport.firePropertyChange("heater",0,1);
+property.firePropertyChange("heater",0,1);
   }
   public void down(){
 state.down(this);
-propertyChangeSupport.firePropertyChange("heater",0,1);
+property.firePropertyChange("heater",0,1);
   }
   public void setState(HeaterState state){
     this.state = state;
@@ -31,12 +31,12 @@ propertyChangeSupport.firePropertyChange("heater",0,1);
   @Override public void addListener(String evtid,
       PropertyChangeListener listener)
   {
-propertyChangeSupport.addPropertyChangeListener(evtid,listener);
+property.addPropertyChangeListener(evtid,listener);
   }
 
   @Override public void removeListener(String evtid,
       PropertyChangeListener listener)
   {
-propertyChangeSupport.removePropertyChangeListener(evtid,listener);
+property.removePropertyChangeListener(evtid,listener);
   }
 }
