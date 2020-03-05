@@ -11,10 +11,14 @@ public class StringDoubleConverter extends StringConverter<Number> {
 
     @Override
     public String toString(Number n) {
-        if (n == null || n.intValue() == emptyValue) {
+        if (n == null || n.doubleValue() == emptyValue) {
             return "";
         }
-        return n.toString();
+        try {
+            return n.toString().substring(0, 5);
+        } catch (StringIndexOutOfBoundsException e) {
+            return n.toString();
+        }
     }
 
     @Override
