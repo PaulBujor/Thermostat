@@ -18,8 +18,7 @@ public class MainViewModel implements PropertyChangeListener {
     private DoubleProperty t2;
     private IntegerProperty heaterState;
 
-    public MainViewModel(HeaterModel model)
-    {
+    public MainViewModel(HeaterModel model) {
         this.model = model;
         t0 = new SimpleDoubleProperty();
         t1 = new SimpleDoubleProperty();
@@ -30,7 +29,6 @@ public class MainViewModel implements PropertyChangeListener {
         model.addListener("t2", this);
         model.addListener("heater", this);
     }
-
 
     public DoubleProperty t0Property() {
         return t0;
@@ -48,29 +46,35 @@ public class MainViewModel implements PropertyChangeListener {
         return heaterState;
     }
 
-    public void increaseTemperature()
-    {
+    public void increaseTemperature() {
         model.heaterUp();
     }
 
-    public void decreaseTemperature()
-    {
+    public void decreaseTemperature() {
         model.heaterDown();
     }
 
     @Override
     public void propertyChange(PropertyChangeEvent evt) {
-        switch (evt.getPropertyName())
-        {
-            case "t0": t0.setValue(Double.parseDouble((String) evt.getNewValue()));
-            break;
-            case "t1": t1.setValue(Double.parseDouble((String) evt.getNewValue()));
-            break;
-            case "t2": t2.setValue(Double.parseDouble((String) evt.getNewValue()));
-            break;
-            case "heater": heaterState.setValue(Double.parseDouble((String) evt.getNewValue()));
-            break;
-        }
-
+        Platform.runLater(() -> {
+            switch (evt.getPropertyName()) {
+                case "t0":
+                    System.out.println("t0 update");
+                    t0.setValue((Double) evt.getNewValue());
+                    break;
+                case "t1":
+                    System.out.println("t1 update");
+                    t1.setValue((Double) evt.getNewValue());
+                    break;
+                case "t2":
+                    System.out.println("t2 update");
+                    t2.setValue((Double) evt.getNewValue());
+                    break;
+                case "heater":
+                    heaterState.setValue((Integer) evt.getNewValue());
+                    break;
+            }
+            System.out.printf("T0: %.2f\nT1: %.2f\nT2: %.2f\nState: %d\n________________________\n",t0.get(), t1.get(), t2.get(), heaterState.get());
+        });
     }
 }

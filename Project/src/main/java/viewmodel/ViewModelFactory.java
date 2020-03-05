@@ -2,15 +2,14 @@ package viewmodel;
 
 import model.HeaterModel;
 
-public class ViewModelFactory
-{
-  private MainViewModel mainViewModel;
+public class ViewModelFactory {
+    private MainViewModel mainViewModel;
 
-  public ViewModelFactory(HeaterModel model){
-    this.mainViewModel = new MainViewModel(model);
-  }
+    public ViewModelFactory(HeaterModel model) {
+        mainViewModel = new MainViewModel(model);
+    }
 
-  public MainViewModel getHeaterViewModel(){
-    return mainViewModel;
-  }
+    public MainViewModel getHeaterViewModel() {
+        return mainViewModel;
+    }
 }
