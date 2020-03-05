@@ -16,7 +16,9 @@ public class OutsideThermometer implements Runnable, PropertyChangeSubject {
     @Override
     public void run() {
         while (true) {
-            property.firePropertyChange("t0", prevTemp, externalTemperature(prevTemp, -20, 20));
+            double newTemp = externalTemperature(prevTemp, -20, 20);
+            property.firePropertyChange("t0", prevTemp, newTemp);
+            prevTemp = newTemp;
             try {
                 Thread.sleep(6000);
             } catch (InterruptedException e) {

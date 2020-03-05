@@ -59,22 +59,23 @@ public class MainViewModel implements PropertyChangeListener {
         Platform.runLater(() -> {
             switch (evt.getPropertyName()) {
                 case "t0":
-                    System.out.println("t0 update");
                     t0.setValue((Double) evt.getNewValue());
                     break;
                 case "t1":
-                    System.out.println("t1 update");
                     t1.setValue((Double) evt.getNewValue());
                     break;
                 case "t2":
-                    System.out.println("t2 update");
                     t2.setValue((Double) evt.getNewValue());
                     break;
                 case "heater":
                     heaterState.setValue((Integer) evt.getNewValue());
                     break;
             }
-            System.out.printf("T0: %f\nT1: %f\nT2: %f\nState: %d\n________________________\n",t0.get(), t1.get(), t2.get(), heaterState.get());
+
+            
+
+//            System.out.printf("T0: %.2f\nT1: %.2f\nT2: %.2f\nState: %d\n________________________\n",t0.get(), t1.get(), t2.get(), heaterState.get());
+
         });
     }
 }
