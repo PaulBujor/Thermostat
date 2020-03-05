@@ -10,6 +10,7 @@ import viewmodel.ViewModelFactory;
 public class ViewHandler {
     private ViewModelFactory viewModelFactory;
     private PrimaryController primaryController;
+    private SecondaryController secondaryController;
     private Scene currentScene;
     private Stage primaryStage;
 
@@ -29,6 +30,8 @@ public class ViewHandler {
             case "temperature":
                 root = loadHeatView("MainView.fxml");
                 break;
+            case "secondary":
+                root = loadSecondaryView("secondary.fxml");
             default:
                 System.out.println("hola hombre");
                 break;
@@ -64,5 +67,27 @@ public class ViewHandler {
             primaryController.reset();
         }
         return primaryController.getRoot();
+    }
+
+    private Region loadSecondaryView(String fxmlFile) {
+        Region root = null;
+        if (secondaryController == null) {
+            try {
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/" + fxmlFile));
+                root = loader.load();
+                secondaryController = loader.getController();
+                secondaryController.init(this,viewModelFactory.getSecondaryViewModel(), root);
+            }
+            catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+        else  {
+            secondaryController.reset();
+        }
+        return  secondaryController.getRoot();
+
+
+
     }
 }

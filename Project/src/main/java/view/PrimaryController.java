@@ -43,6 +43,8 @@ public class PrimaryController {
     @FXML
     private Label powerPosition;
 
+
+
     private Region root;
     private ViewHandler viewHandler;
     private MainViewModel viewModel;
@@ -107,7 +109,7 @@ public class PrimaryController {
     }
 
     @FXML
-    private void switchToSecondary() throws IOException {
-//        App.setRoot("secondary");
+    private void showHistoryButtonPressed(){
+        viewHandler.openView("secondary");
     }
 }

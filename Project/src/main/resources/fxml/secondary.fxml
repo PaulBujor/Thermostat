@@ -16,14 +16,14 @@
             </font>
         </Label>
         <Pane layoutX="658.0" layoutY="231.0" prefHeight="200.0" prefWidth="200.0" />
-        <Button fx:id="SwithToMainButton" layoutX="580.0" layoutY="585.0" mnemonicParsing="false" prefHeight="51.0" prefWidth="356.0" style="-fx-background-color: #008aff;" text="Main view" textFill="WHITE">
+        <Button fx:id="switchToMainButton" layoutX="580.0" layoutY="585.0" mnemonicParsing="false" onAction="#switchToMainButtonPressed" prefHeight="51.0" prefWidth="356.0" style="-fx-background-color: #008aff;" text="Main view" textFill="WHITE">
             <font>
                 <Font name="System Bold" size="23.0" />
             </font>
         </Button>
       <TableView fx:id="thermometerTable" layoutX="102.0" layoutY="94.0" prefHeight="453.0" prefWidth="782.0">
         <columns>
-          <TableColumn fx:id="thermometer0Collumn" prefWidth="127.0" text="T0" />
+          <TableColumn fx:id="thermometer0Column" prefWidth="127.0" text="T0" />
           <TableColumn fx:id="thermometer1Column" prefWidth="119.0" text="T1" />
             <TableColumn fx:id="thermometer2Column" prefWidth="115.0" text="T2" />
             <TableColumn fx:id="timeCollumn" prefWidth="115.0" text="Time" />
