@@ -65,7 +65,7 @@ public class PrimaryController {
         Bindings.bindBidirectional(valueT1.textProperty(), viewModel.t1Property(), new StringDoubleConverter(10));
         Bindings.bindBidirectional(valueT2.textProperty(), viewModel.t2Property(), new StringDoubleConverter(10));
         Bindings.bindBidirectional(powerPosition.textProperty(), viewModel.heaterStateProperty(), new StringIntegerConverter(0));
-        Bindings.bindBidirectional(errorLabel.textProperty(), viewModel.errorProperty());
+        errorLabel.textProperty().bind(viewModel.errorProperty());
 
         increaseButton.setOnAction((evt) -> viewModel.increaseTemperature());
         decreaseButton.setOnAction((evt) -> viewModel.decreaseTemperature());
@@ -103,4 +103,5 @@ public class PrimaryController {
     private void showHistoryButtonPressed(){
         viewHandler.openView("secondary");
     }
+
 }
