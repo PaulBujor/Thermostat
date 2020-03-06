@@ -14,6 +14,12 @@ public class Temperature {
         timeStamp = LocalDate.now();
     }
 
+    public Temperature(String id, Double temperature, LocalDate timeStamp) {
+        this.id = id;
+        this.temperature = temperature;
+        this.timeStamp = timeStamp;
+    }
+
     public String getId() {
         return id;
     }
