@@ -62,8 +62,11 @@ public class HeaterModelManager implements HeaterModel, PropertyChangeListener {
                 t2.changeHeaterMode(heater.status());
                 break;
         }
-        if (!evt.getPropertyName().equals("heater"))
-            addTemp(new Temperature(evt.getPropertyName(), (Double) evt.getNewValue()));
+        if (!evt.getPropertyName().equals("heater")) {
+            Temperature temperature = new Temperature(evt.getPropertyName(), (Double) evt.getNewValue());
+            addTemp(temperature);
+            property.firePropertyChange("addTemp", 0, temperature);
+        }
 
     }
 
