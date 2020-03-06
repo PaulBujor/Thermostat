@@ -3,11 +3,14 @@ package view;
 import java.io.IOException;
 
 import javafx.beans.binding.Bindings;
+import javafx.beans.property.IntegerProperty;
+import javafx.beans.property.SimpleIntegerProperty;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.Region;
 import javafx.scene.paint.Color;
+import javafx.scene.paint.Paint;
 import javafx.scene.shape.Circle;
 import utility.StringDoubleConverter;
 import utility.StringIntegerConverter;
@@ -43,6 +46,7 @@ public class PrimaryController {
     @FXML
     private Label powerPosition;
 
+
     private Region root;
     private ViewHandler viewHandler;
     private MainViewModel viewModel;
@@ -60,11 +64,29 @@ public class PrimaryController {
         Bindings.bindBidirectional(valueT2.textProperty(), viewModel.t2Property(), new StringDoubleConverter(10));
         Bindings.bindBidirectional(powerPosition.textProperty(), viewModel.heaterStateProperty(), new StringIntegerConverter(0));
 
+
         increaseButton.setOnAction((evt) -> viewModel.increaseTemperature());
         decreaseButton.setOnAction((evt) -> viewModel.decreaseTemperature());
 
-        //TODO move these to viewmodel, add listener to color variable or something
         viewModel.t0Property().addListener((evt, oldVal, newVal) -> {
+            t0Circle.setStroke(viewModel.gett0Color());
+            t0Circle.setOpacity(viewModel.t0Property().get() / 20);
+        });
+
+
+        viewModel.t1Property().addListener((evt, oldVal, newVal) -> {
+            t1Circle.setStroke(viewModel.gett1Color());
+            t1Circle.setOpacity(viewModel.t1Property().get() / 20);
+        });
+
+        viewModel.t2Property().addListener((evt, oldVal, newVal) -> {
+            t2Circle.setStroke(viewModel.gett2Color());
+            t2Circle.setOpacity(viewModel.t2Property().get() / 20);
+        });
+
+
+        //TODO move these to viewmodel, add listener to color variable or something
+        /*viewModel.t0Property().addListener((evt, oldVal, newVal) -> {
             if (viewModel.t0Property().get() <= 0) {
                 t0Circle.setStroke(Color.rgb(31, 154, 255));
                 t0Circle.setOpacity(viewModel.t0Property().get() / 20);
@@ -92,7 +114,7 @@ public class PrimaryController {
                 t2Circle.setStroke(Color.rgb(255, 33, 33));
                 t2Circle.setOpacity(viewModel.t2Property().get() / 20);
             }
-        });
+        });*/
     }
 
     public void reset() {

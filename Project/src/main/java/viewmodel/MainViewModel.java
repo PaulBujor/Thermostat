@@ -5,10 +5,13 @@ import javafx.beans.property.DoubleProperty;
 import javafx.beans.property.IntegerProperty;
 import javafx.beans.property.SimpleDoubleProperty;
 import javafx.beans.property.SimpleIntegerProperty;
+import javafx.collections.ObservableList;
+import javafx.scene.paint.Color;
 import model.HeaterModel;
 
 import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
+
 
 public class MainViewModel implements PropertyChangeListener {
 
@@ -17,6 +20,11 @@ public class MainViewModel implements PropertyChangeListener {
     private DoubleProperty t1;
     private DoubleProperty t2;
     private IntegerProperty heaterState;
+    private Color t0Color;
+    private Color t1Color;
+    private Color t2Color;
+
+
 
     public MainViewModel(HeaterModel model) {
         this.model = model;
@@ -54,24 +62,65 @@ public class MainViewModel implements PropertyChangeListener {
         model.heaterDown();
     }
 
+    public Color gett0Color()
+    {
+        return t0Color;
+    }
+
+    public Color gett1Color()
+    {
+        return t1Color;
+    }
+
+    public Color gett2Color()
+    {
+        return t2Color;
+    }
+
     @Override
     public void propertyChange(PropertyChangeEvent evt) {
         Platform.runLater(() -> {
             switch (evt.getPropertyName()) {
                 case "t0":
                     t0.setValue((Double) evt.getNewValue());
+                    if ((Double) evt.getNewValue() <= 0)
+                    {
+                       t0Color = Color.rgb(31,154,255);
+                    }
+                    else
+                    {
+                        t0Color = Color.rgb(255,33,33);
+                    }
                     break;
                 case "t1":
                     t1.setValue((Double) evt.getNewValue());
+                    if ((Double) evt.getNewValue() <= 0)
+                    {
+                        t1Color = Color.rgb(31,154,255);
+                    }
+                    else
+                    {
+                        t1Color = Color.rgb(255,33,33);
+                    }
                     break;
                 case "t2":
                     t2.setValue((Double) evt.getNewValue());
+                    if ((Double) evt.getNewValue() <= 0)
+                    {
+                        t2Color = Color.rgb(31,154,255);
+                    }
+                    else
+                    {
+                        t2Color = Color.rgb(255,33,33);
+                    }
                     break;
                 case "heater":
                     heaterState.setValue((Integer) evt.getNewValue());
                     break;
             }
 //            System.out.printf("T0: %.2f\nT1: %.2f\nT2: %.2f\nState: %d\n________________________\n",t0.get(), t1.get(), t2.get(), heaterState.get());
+
+
         });
     }
 }
