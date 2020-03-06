@@ -27,11 +27,13 @@ public class MainViewModel implements PropertyChangeListener {
         t0 = new SimpleDoubleProperty();
         t1 = new SimpleDoubleProperty();
         t2 = new SimpleDoubleProperty();
+        error = new SimpleStringProperty();
         heaterState = new SimpleIntegerProperty();
         model.addListener("t0", this);
         model.addListener("t1", this);
         model.addListener("t2", this);
         model.addListener("heater", this);
+        model.addListener("critical", this);
     }
 
     public DoubleProperty t0Property() {

@@ -12,49 +12,51 @@ import javafx.scene.layout.Region;
 import viewmodel.MainViewModel;
 import viewmodel.SecondaryViewModel;
 
-public class SecondaryController
-{
+public class SecondaryController {
 
 
-  @FXML TableView<TableRowData> thermometerTable;
-  @FXML TableColumn<TableRowData, String> thermometerIdColumn;
-  @FXML TableColumn<TableRowData, Number> temperatureValue;
-  //TODO needs local date or whatever its called
-  @FXML TableColumn<TableRowData, String> timeColumn;
+    @FXML
+    TableView<TableRowData> thermometerTable;
+    @FXML
+    TableColumn<TableRowData, String> thermometerIdColumn;
+    @FXML
+    TableColumn<TableRowData, Number> temperatureValue;
+    //TODO needs local date or whatever its called
+    @FXML
+    TableColumn<TableRowData, String> timeColumn;
 
 
-  private ViewHandler viewHandler;
-private SecondaryViewModel secondaryViewModel;
-  private Region root;
+    private ViewHandler viewHandler;
+    private SecondaryViewModel secondaryViewModel;
+    private Region root;
 
-  public SecondaryController()
-  {
+    public SecondaryController() {
 
-  }
-   public void init(ViewHandler viewHandler, SecondaryViewModel secondaryViewModel, Region root){
-    this.viewHandler = viewHandler;
-    this.secondaryViewModel= secondaryViewModel;
-    this.root = root;
+    }
 
-    thermometerIdColumn.setCellValueFactory(cellData -> cellData.getValue().thermometerIDProperty());
-    temperatureValue.setCellValueFactory(cellData -> cellData.getValue().temperatureValueProperty());
-    timeColumn.setCellValueFactory(cellData -> cellData.getValue().timeStampStringProperty());
+    public void init(ViewHandler viewHandler, SecondaryViewModel secondaryViewModel, Region root) {
+        this.viewHandler = viewHandler;
+        this.secondaryViewModel = secondaryViewModel;
+        this.root = root;
 
+        thermometerIdColumn.setCellValueFactory(cellData -> cellData.getValue().thermometerIDProperty());
+        temperatureValue.setCellValueFactory(cellData -> cellData.getValue().temperatureValueProperty());
+//        timeColumn.setCellValueFactory(cellData -> cellData.getValue().timeStampStringProperty());
+        thermometerTable.setItems(secondaryViewModel.getList());
+    }
 
-      thermometerTable.setItems(secondaryViewModel.getList());
-   }
+    public void reset() {
 
-  public void reset(){
+    }
 
-  }
+    public Region getRoot() {
+        return this.root;
+    }
 
-  public Region getRoot(){
-    return this.root;
-  }
-
-  @FXML private void switchToMainButtonPressed(){
-viewHandler.openView("temperature");
-  }
+    @FXML
+    private void switchToMainButtonPressed() {
+        viewHandler.openView("temperature");
+    }
 
 
 }

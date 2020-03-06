@@ -65,7 +65,7 @@ public class PrimaryController {
         Bindings.bindBidirectional(valueT1.textProperty(), viewModel.t1Property(), new StringDoubleConverter(10));
         Bindings.bindBidirectional(valueT2.textProperty(), viewModel.t2Property(), new StringDoubleConverter(10));
         Bindings.bindBidirectional(powerPosition.textProperty(), viewModel.heaterStateProperty(), new StringIntegerConverter(0));
-        errorLabel.textProperty().bind(viewModel.errorProperty());
+        errorLabel.textProperty().bindBidirectional(viewModel.errorProperty());
 
         increaseButton.setOnAction((evt) -> viewModel.increaseTemperature());
         decreaseButton.setOnAction((evt) -> viewModel.decreaseTemperature());
@@ -88,11 +88,11 @@ public class PrimaryController {
     }
 
     public void reset() {
-        valueT0.setText("0");
-        valueT1.setText("0");
-        valueT2.setText("0");
-        powerPosition.setText("0");
-        errorLabel.setText("");
+//        valueT0.setText("0");
+//        valueT1.setText("0");
+//        valueT2.setText("0");
+//        powerPosition.setText("0");
+//        errorLabel.setText(null);
     }
 
     public Region getRoot() {
