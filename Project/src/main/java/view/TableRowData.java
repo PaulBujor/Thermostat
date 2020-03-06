@@ -15,5 +15,6 @@ private DoubleProperty temperatureValue;
 
 public TableRowData(Temperature temperature){
 thermometerID = new SimpleStringProperty(temperature.getId());
+temperatureValue new DoubleProperty(temperature.)
 }
 }
