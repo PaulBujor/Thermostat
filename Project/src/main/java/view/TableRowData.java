@@ -40,6 +40,7 @@ temperatureValue = new SimpleDoubleProperty(temperature.getTemperature());
   }
 
   public Temperature getTemperature(){
-  return new Temperature(thermometerIDProperty().get(),temperatureValueProperty().get(),timeStampStringProperty());
+/*  return new Temperature(thermometerIDProperty().get(),temperatureValueProperty().get(),timeStampStringProperty());*/
+    return  null;
   }
 }

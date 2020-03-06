@@ -3,6 +3,7 @@ package view;
 import java.io.IOException;
 
 import javafx.beans.property.DoubleProperty;
+import javafx.beans.property.StringProperty;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
@@ -16,9 +17,10 @@ public class SecondaryController
 
 
   @FXML TableView<TableRowData> thermometerTable;
-  @FXML TableColumn<TableRowData, DoubleProperty> thermometer0Column;
-  @FXML TableColumn<TableRowData, DoubleProperty> thermometer1Column;
-  @FXML TableColumn<TableRowData, DoubleProperty> thermometer2Column;
+  @FXML TableColumn<TableRowData, String> thermometerIdColumn;
+  @FXML TableColumn<TableRowData, Number> temperatureValue;
+  //TODO needs local date or whatever its called
+  @FXML TableColumn<TableRowData, String> timeColumn;
 
 
   private ViewHandler viewHandler;
@@ -34,7 +36,12 @@ private SecondaryViewModel secondaryViewModel;
     this.secondaryViewModel= secondaryViewModel;
     this.root = root;
 
-     // thermometerTable.setItems(secondaryViewModel.getList());
+    thermometerIdColumn.setCellValueFactory(cellData -> cellData.getValue().thermometerIDProperty());
+    temperatureValue.setCellValueFactory(cellData -> cellData.getValue().temperatureValueProperty());
+    timeColumn.setCellValueFactory(cellData -> cellData.getValue().timeStampStringProperty());
+
+
+      thermometerTable.setItems(secondaryViewModel.getList());
    }
 
   public void reset(){

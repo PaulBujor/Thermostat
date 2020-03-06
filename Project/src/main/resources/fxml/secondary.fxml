@@ -23,7 +23,7 @@
         </Button>
       <TableView fx:id="thermometerTable" layoutX="102.0" layoutY="94.0" prefHeight="453.0" prefWidth="782.0">
         <columns>
-          <TableColumn fx:id="thermometerIdColumn" prefWidth="127.0" text="ThermometerID" />
+          <TableColumn fx:id="thermometerIdColumn" prefWidth="127.0" text="ID" />
           <TableColumn fx:id="temperatureValue" prefWidth="119.0" text="Value" />
             <TableColumn fx:id="timeCollumn" prefWidth="115.0" text="Time" />
         </columns>
