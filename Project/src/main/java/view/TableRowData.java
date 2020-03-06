@@ -20,8 +20,8 @@ public class TableRowData {
 
 public TableRowData(Temperature temperature){
 thermometerID = new SimpleStringProperty(temperature.getId());
-LocalDate date = temperature.getTimeStamp();
-time = new SimpleStringProperty(temperature.getTimeStamp().format(DateTimeFormatter()))
+DateTimeFormatter formatter = DateTimeFormatter.ofPattern("HH:mm:ss");
+time.set(temperature.getTimeStamp().format(formatter));
 temperatureValue = new SimpleDoubleProperty(temperature.getTemperature());
 }
 
@@ -35,8 +35,11 @@ temperatureValue = new SimpleDoubleProperty(temperature.getTemperature());
   {
     return temperatureValue;
   }
+  public StringProperty timeStampStringProperty(){
+  return time;
+  }
 
   public Temperature getTemperature(){
-  return new Temperature(thermometerIDProperty().get(),temperatureValueProperty().get())
+  return new Temperature(thermometerIDProperty().get(),temperatureValueProperty().get(),timeStampStringProperty());
   }
 }
