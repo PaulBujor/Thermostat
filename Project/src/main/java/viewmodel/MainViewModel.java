@@ -80,6 +80,7 @@ public class MainViewModel implements PropertyChangeListener {
     @Override
     public void propertyChange(PropertyChangeEvent evt) {
         Platform.runLater(() -> {
+            error.set(null);
             switch (evt.getPropertyName()) {
                 case "t0":
                     t0.setValue((Double) evt.getNewValue());

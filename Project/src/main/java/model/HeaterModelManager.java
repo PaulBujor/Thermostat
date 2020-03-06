@@ -52,9 +52,15 @@ public class HeaterModelManager implements HeaterModel, PropertyChangeListener {
                 break;
             case "t1":
                 property.firePropertyChange("t1", -50, evt.getNewValue());
+                if((double) evt.getNewValue() < CRITICAL_LOW || (double) evt.getNewValue() > CRITICAL_HIGH){
+                    property.firePropertyChange("critical", -1, 0);
+                }
                 break;
             case "t2":
                 property.firePropertyChange("t2", -50, evt.getNewValue());
+                if((double) evt.getNewValue() < CRITICAL_LOW || (double) evt.getNewValue() > CRITICAL_HIGH){
+                    property.firePropertyChange("critical", -1, 0);
+                }
                 break;
             case "heater":
                 property.firePropertyChange("heater", -1, heater.status());
