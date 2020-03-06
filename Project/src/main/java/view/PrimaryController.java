@@ -46,11 +46,6 @@ public class PrimaryController {
     @FXML
     private Label powerPosition;
 
-
-<<<<<<< HEAD
-=======
-
->>>>>>> 202402aa5ca4a1ea72945847187c12c9ce23616b
     private Region root;
     private ViewHandler viewHandler;
     private MainViewModel viewModel;
@@ -87,38 +82,6 @@ public class PrimaryController {
             t2Circle.setStroke(viewModel.gett2Color());
             t2Circle.setOpacity(viewModel.t2Property().get() / 20);
         });
-
-
-        //TODO move these to viewmodel, add listener to color variable or something
-        /*viewModel.t0Property().addListener((evt, oldVal, newVal) -> {
-            if (viewModel.t0Property().get() <= 0) {
-                t0Circle.setStroke(Color.rgb(31, 154, 255));
-                t0Circle.setOpacity(viewModel.t0Property().get() / 20);
-            } else {
-                t0Circle.setStroke(Color.rgb(255, 33, 33));
-                t0Circle.setOpacity(viewModel.t0Property().get() / 20);
-            }
-        });
-
-        viewModel.t1Property().addListener((evt, oldVal, newVal) -> {
-            if (viewModel.t1Property().get() <= 0) {
-                t1Circle.setStroke(Color.rgb(31, 154, 255));
-                t1Circle.setOpacity(viewModel.t1Property().get() / 20);
-            } else {
-                t1Circle.setStroke(Color.rgb(255, 33, 33));
-                t1Circle.setOpacity(viewModel.t1Property().get() / 20);
-            }
-        });
-
-        viewModel.t2Property().addListener((evt, oldVal, newVal) -> {
-            if (viewModel.t2Property().get() <= 0) {
-                t2Circle.setStroke(Color.rgb(31, 154, 255));
-                t2Circle.setOpacity(viewModel.t2Property().get() / 20);
-            } else {
-                t2Circle.setStroke(Color.rgb(255, 33, 33));
-                t2Circle.setOpacity(viewModel.t2Property().get() / 20);
-            }
-        });*/
     }
 
     public void reset() {
