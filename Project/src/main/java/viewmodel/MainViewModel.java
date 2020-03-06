@@ -117,6 +117,9 @@ public class MainViewModel implements PropertyChangeListener {
                 case "heater":
                     heaterState.setValue((Integer) evt.getNewValue());
                     break;
+                case "critical":
+                    error.set("Critical temperature");
+                    break;
             }
         });
     }
