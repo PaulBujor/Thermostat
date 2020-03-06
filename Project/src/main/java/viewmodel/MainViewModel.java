@@ -1,10 +1,7 @@
 package viewmodel;
 
 import javafx.application.Platform;
-import javafx.beans.property.DoubleProperty;
-import javafx.beans.property.IntegerProperty;
-import javafx.beans.property.SimpleDoubleProperty;
-import javafx.beans.property.SimpleIntegerProperty;
+import javafx.beans.property.*;
 import javafx.collections.ObservableList;
 import javafx.scene.paint.Color;
 import model.HeaterModel;
@@ -23,8 +20,7 @@ public class MainViewModel implements PropertyChangeListener {
     private Color t0Color;
     private Color t1Color;
     private Color t2Color;
-
-
+    private StringProperty error;
 
     public MainViewModel(HeaterModel model) {
         this.model = model;
@@ -75,6 +71,10 @@ public class MainViewModel implements PropertyChangeListener {
     public Color gett2Color()
     {
         return t2Color;
+    }
+
+    public StringProperty errorProperty(){
+        return error;
     }
 
     @Override
