@@ -17,9 +17,9 @@ public class MainViewModel implements PropertyChangeListener {
     private DoubleProperty t1;
     private DoubleProperty t2;
     private IntegerProperty heaterState;
-    private Color t0Color;
-    private Color t1Color;
-    private Color t2Color;
+    private Color t0Color = Color.rgb(31, 154, 255);
+    private Color t1Color = Color.rgb(31, 154, 255);
+    private Color t2Color = Color.rgb(31, 154, 255);
     private StringProperty error;
 
     public MainViewModel(HeaterModel model) {
@@ -79,37 +79,39 @@ public class MainViewModel implements PropertyChangeListener {
     @Override
     public void propertyChange(PropertyChangeEvent evt) {
         Platform.runLater(() -> {
-            error.set(null);
             switch (evt.getPropertyName()) {
                 case "t0":
-                    t0.setValue((Double) evt.getNewValue());
                     if ((Double) evt.getNewValue() <= 0) {
                         t0Color = Color.rgb(31, 154, 255);
                     } else {
                         t0Color = Color.rgb(255, 33, 33);
                     }
+                    t0.setValue((Double) evt.getNewValue());
                     break;
                 case "t1":
-                    t1.setValue((Double) evt.getNewValue());
                     if ((Double) evt.getNewValue() <= 0) {
                         t1Color = Color.rgb(31, 154, 255);
                     } else {
                         t1Color = Color.rgb(255, 33, 33);
                     }
+                    t1.setValue((Double) evt.getNewValue());
                     break;
                 case "t2":
-                    t2.setValue((Double) evt.getNewValue());
                     if ((Double) evt.getNewValue() <= 0) {
                         t2Color = Color.rgb(31, 154, 255);
                     } else {
                         t2Color = Color.rgb(255, 33, 33);
                     }
+                    t2.setValue((Double) evt.getNewValue());
                     break;
                 case "heater":
                     heaterState.setValue((Integer) evt.getNewValue());
                     break;
                 case "critical":
-                    error.set("Critical temperature");
+                    if ((int) evt.getNewValue() == 1)
+                        error.set("Critical temperature");
+                    else
+                        error.set("");
                     break;
             }
         });

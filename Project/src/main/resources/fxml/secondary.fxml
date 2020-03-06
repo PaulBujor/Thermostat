@@ -25,7 +25,7 @@
         <columns>
           <TableColumn fx:id="thermometerIdColumn" prefWidth="127.0" text="ID" />
           <TableColumn fx:id="temperatureValue" prefWidth="119.0" text="Value" />
-            <TableColumn fx:id="timeCollumn" prefWidth="115.0" text="Time" />
+            <TableColumn fx:id="timeColumn" prefWidth="115.0" text="Time" />
         </columns>
       </TableView>
     </children>

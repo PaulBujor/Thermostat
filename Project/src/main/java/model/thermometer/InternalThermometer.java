@@ -54,6 +54,10 @@ public class InternalThermometer implements Runnable, PropertyChangeSubject {
         this.outTemp = outTemp;
     }
 
+    public double getLastTemp() {
+        return lastTemp;
+    }
+
     @Override
     public void addListener(String evtid,
                             PropertyChangeListener listener) {

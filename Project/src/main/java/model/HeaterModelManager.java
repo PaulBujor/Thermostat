@@ -42,6 +42,14 @@ public class HeaterModelManager implements HeaterModel, PropertyChangeListener {
         th2.start();
     }
 
+    private void criticalTemp() {
+        if(t1.getLastTemp() < CRITICAL_LOW || t1.getLastTemp() > CRITICAL_HIGH || t2.getLastTemp() < CRITICAL_LOW || t2.getLastTemp() > CRITICAL_HIGH){
+            property.firePropertyChange("critical", -1, 1);
+        } else {
+            property.firePropertyChange("critical", -1, 0);
+        }
+    }
+
     @Override
     public void propertyChange(PropertyChangeEvent evt) {
         switch (evt.getPropertyName()) {
@@ -52,15 +60,9 @@ public class HeaterModelManager implements HeaterModel, PropertyChangeListener {
                 break;
             case "t1":
                 property.firePropertyChange("t1", -50, evt.getNewValue());
-                if((double) evt.getNewValue() < CRITICAL_LOW || (double) evt.getNewValue() > CRITICAL_HIGH){
-                    property.firePropertyChange("critical", -1, 0);
-                }
                 break;
             case "t2":
                 property.firePropertyChange("t2", -50, evt.getNewValue());
-                if((double) evt.getNewValue() < CRITICAL_LOW || (double) evt.getNewValue() > CRITICAL_HIGH){
-                    property.firePropertyChange("critical", -1, 0);
-                }
                 break;
             case "heater":
                 property.firePropertyChange("heater", -1, heater.status());
@@ -72,6 +74,7 @@ public class HeaterModelManager implements HeaterModel, PropertyChangeListener {
             Temperature temperature = new Temperature(evt.getPropertyName(), (Double) evt.getNewValue());
             addTemp(temperature);
             property.firePropertyChange("addTemp", 0, temperature);
+            criticalTemp();
         }
 
     }

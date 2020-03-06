@@ -75,7 +75,6 @@ public class PrimaryController {
             t0Circle.setOpacity(viewModel.t0Property().get() / 20);
         });
 
-
         viewModel.t1Property().addListener((evt, oldVal, newVal) -> {
             t1Circle.setStroke(viewModel.gett1Color());
             t1Circle.setOpacity(viewModel.t1Property().get() / 20);

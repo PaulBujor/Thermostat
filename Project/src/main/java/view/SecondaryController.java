@@ -16,14 +16,14 @@ public class SecondaryController {
 
 
     @FXML
-    TableView<TableRowData> thermometerTable;
+    private TableView<TableRowData> thermometerTable;
     @FXML
-    TableColumn<TableRowData, String> thermometerIdColumn;
+    private TableColumn<TableRowData, String> thermometerIdColumn;
     @FXML
-    TableColumn<TableRowData, Number> temperatureValue;
+    private TableColumn<TableRowData, Number> temperatureValue;
     //TODO needs local date or whatever its called
     @FXML
-    TableColumn<TableRowData, String> timeColumn;
+    private TableColumn<TableRowData, String> timeColumn;
 
 
     private ViewHandler viewHandler;
@@ -41,7 +41,7 @@ public class SecondaryController {
 
         thermometerIdColumn.setCellValueFactory(cellData -> cellData.getValue().thermometerIDProperty());
         temperatureValue.setCellValueFactory(cellData -> cellData.getValue().temperatureValueProperty());
-//        timeColumn.setCellValueFactory(cellData -> cellData.getValue().timeStampStringProperty());
+        timeColumn.setCellValueFactory(cellData -> cellData.getValue().timeStampStringProperty());
         thermometerTable.setItems(secondaryViewModel.getList());
     }
 

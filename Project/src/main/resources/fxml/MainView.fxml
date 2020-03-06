@@ -15,7 +15,6 @@
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-
 <BorderPane prefHeight="650.0" prefWidth="1050.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.PrimaryController">
    <center>
       <AnchorPane prefHeight="639.0" prefWidth="718.0">
@@ -23,6 +22,11 @@
             <Label alignment="CENTER" layoutX="261.0" layoutY="134.0" prefHeight="53.0" prefWidth="356.0" text="Power Position" textFill="#008aff" AnchorPane.bottomAnchor="445.0" AnchorPane.leftAnchor="261.0" AnchorPane.rightAnchor="96.0" AnchorPane.topAnchor="135.0">
                <font>
                   <Font name="System Bold" size="50.0" />
+               </font>
+            </Label>
+            <Label fx:id="errorLabel" layoutX="14.0" layoutY="30.0" prefHeight="17.0" prefWidth="582.0" text="Error" textAlignment="CENTER" textFill="RED">
+               <font>
+                  <Font name="System Bold Italic" size="25.0" />
                </font>
             </Label>
             <StackPane layoutX="339.0" layoutY="246.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="206.0" AnchorPane.leftAnchor="339.0" AnchorPane.rightAnchor="174.0" AnchorPane.topAnchor="246.0">
