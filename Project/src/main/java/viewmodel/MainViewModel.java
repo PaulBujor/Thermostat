@@ -1,10 +1,7 @@
 package viewmodel;
 
 import javafx.application.Platform;
-import javafx.beans.property.DoubleProperty;
-import javafx.beans.property.IntegerProperty;
-import javafx.beans.property.SimpleDoubleProperty;
-import javafx.beans.property.SimpleIntegerProperty;
+import javafx.beans.property.*;
 import javafx.collections.ObservableList;
 import javafx.scene.paint.Color;
 import model.HeaterModel;
@@ -23,8 +20,7 @@ public class MainViewModel implements PropertyChangeListener {
     private Color t0Color;
     private Color t1Color;
     private Color t2Color;
-
-
+    private StringProperty error;
 
     public MainViewModel(HeaterModel model) {
         this.model = model;
@@ -77,9 +73,14 @@ public class MainViewModel implements PropertyChangeListener {
         return t2Color;
     }
 
+    public StringProperty errorProperty(){
+        return error;
+    }
+
     @Override
     public void propertyChange(PropertyChangeEvent evt) {
         Platform.runLater(() -> {
+            error.set(null);
             switch (evt.getPropertyName()) {
                 case "t0":
                     t0.setValue((Double) evt.getNewValue());
@@ -117,12 +118,10 @@ public class MainViewModel implements PropertyChangeListener {
                 case "heater":
                     heaterState.setValue((Integer) evt.getNewValue());
                     break;
+                case "critical":
+                    error.set("Critical temperature");
+                    break;
             }
 
-            
-
-//            System.out.printf("T0: %.2f\nT1: %.2f\nT2: %.2f\nState: %d\n________________________\n",t0.get(), t1.get(), t2.get(), heaterState.get());
-
-        });
     }
 }
