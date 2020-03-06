@@ -11,6 +11,7 @@ model\thermometer\OutsideThermometer.class
 viewmodel\SecondaryViewModel.class
 utility\StringDoubleConverter.class
 viewmodel\ViewModelFactory.class
+model\Temperature.class
 utility\PropertyChangeSubject.class
 model\Testing.class
 model\heater\HeaterPosition0.class
