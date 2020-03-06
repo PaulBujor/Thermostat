@@ -8,112 +8,151 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.shape.Circle?>
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="650.0" prefWidth="1050.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.PrimaryController">
-   <children>
-      <AnchorPane style="-fx-background-color: #e3e3e3;" AnchorPane.leftAnchor="0.0">
+
+<BorderPane prefHeight="650.0" prefWidth="1050.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.PrimaryController">
+   <center>
+      <AnchorPane prefHeight="639.0" prefWidth="718.0">
          <children>
-            <VBox prefHeight="650.0" prefWidth="337.0" AnchorPane.bottomAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <Label alignment="CENTER" layoutX="261.0" layoutY="134.0" prefHeight="53.0" prefWidth="356.0" text="Power Position" textFill="#008aff" AnchorPane.bottomAnchor="445.0" AnchorPane.leftAnchor="261.0" AnchorPane.rightAnchor="96.0" AnchorPane.topAnchor="134.0">
+               <font>
+                  <Font name="System Bold" size="50.0" />
+               </font>
+            </Label>
+            <StackPane layoutX="339.0" layoutY="246.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="206.0" AnchorPane.leftAnchor="339.0" AnchorPane.rightAnchor="174.0" AnchorPane.topAnchor="246.0">
                <children>
-                  <AnchorPane prefHeight="217.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
-                     <children>
-                        <Circle fx:id="t0Circle" fill="WHITE" layoutX="169.0" layoutY="100.0" radius="81.0" stroke="#1f9aff" strokeType="INSIDE" strokeWidth="11.0">
-                           <cursor>
-                              <Cursor fx:constant="DEFAULT" />
-                           </cursor>
-                        </Circle>
-                        <Label fx:id="valueT0" layoutX="105.0" layoutY="58.0" prefHeight="83.0" prefWidth="127.0" text="20.20">
-                           <font>
-                              <Font name="System Bold" size="48.0" />
-                           </font>
-                        </Label>
-                        <Label layoutX="88.0" layoutY="181.0" prefHeight="39.0" prefWidth="162.0" text="Thermometer 0">
-                           <font>
-                              <Font name="System Bold" size="22.0" />
-                           </font>
-                        </Label>
-                     </children>
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#1f93ff00" height="200.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="8.0" width="200.0" />
+                  <Label fx:id="powerPosition" alignment="CENTER" contentDisplay="CENTER" prefHeight="162.0" prefWidth="35.0" text="0" textAlignment="CENTER" textFill="#008aff" StackPane.alignment="CENTER">
+                     <font>
+                        <Font name="System Bold" size="94.0" />
+                     </font>
+                  </Label>
+               </children>
+            </StackPane>
+            <VBox alignment="CENTER" layoutX="66.0" prefHeight="687.0" prefWidth="68.0" spacing="150.0" AnchorPane.bottomAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <Button fx:id="increaseButton" mnemonicParsing="false" prefHeight="160.0" prefWidth="71.0" style="-fx-background-color: #008aff;">
                      <VBox.margin>
                         <Insets />
                      </VBox.margin>
-                  </AnchorPane>
-                  <AnchorPane prefHeight="217.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
-                     <children>
-                        <Circle fx:id="t1Circle" fill="WHITE" layoutX="169.0" layoutY="100.0" radius="81.0" stroke="#1f9aff" strokeType="INSIDE" strokeWidth="11.0" AnchorPane.leftAnchor="88.0">
-                           <cursor>
-                              <Cursor fx:constant="DEFAULT" />
-                           </cursor>
-                        </Circle>
-                        <Label fx:id="valueT1" layoutX="105.0" layoutY="58.0" prefHeight="83.0" prefWidth="127.0" text="20.20" textAlignment="CENTER" wrapText="true">
-                           <font>
-                              <Font name="System Bold" size="48.0" />
-                           </font>
-                        </Label>
-                        <Label layoutX="88.0" layoutY="181.0" prefHeight="39.0" prefWidth="162.0" text="Thermometer 1">
-                           <font>
-                              <Font name="System Bold" size="22.0" />
-                           </font>
-                        </Label>
-                     </children>
-                  </AnchorPane>
-                  <AnchorPane prefHeight="216.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
-                     <children>
-                        <Circle fx:id="t2Circle" fill="WHITE" layoutX="169.0" layoutY="100.0" radius="81.0" stroke="#1f9aff" strokeType="INSIDE" strokeWidth="11.0">
-                           <cursor>
-                              <Cursor fx:constant="DEFAULT" />
-                           </cursor>
-                        </Circle>
-                        <Label fx:id="valueT2" layoutX="105.0" layoutY="58.0" prefHeight="83.0" prefWidth="127.0" text="20.20" textAlignment="CENTER">
-                           <font>
-                              <Font name="System Bold" size="48.0" />
-                           </font>
-                        </Label>
-                        <Label layoutX="88.0" layoutY="173.0" prefHeight="39.0" prefWidth="162.0" text="Thermometer 2">
-                           <font>
-                              <Font name="System Bold" size="22.0" />
-                           </font>
-                        </Label>
-                     </children>
-                  </AnchorPane>
+                     <graphic>
+                        <ImageView fitHeight="85.0" fitWidth="52.0" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/up-arrow.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button fx:id="decreaseButton" mnemonicParsing="false" prefHeight="160.0" prefWidth="71.0" style="-fx-background-color: #008aff;">
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                     <graphic>
+                        <ImageView fitHeight="103.0" fitWidth="52.0" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/down-arrow.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
                </children>
             </VBox>
+            <Button fx:id="showHistoryButton" alignment="BOTTOM_CENTER" layoutX="179.0" layoutY="601.0" mnemonicParsing="false" onAction="#showHistoryButtonPressed" prefHeight="51.0" prefWidth="356.0" style="-fx-background-color: #008aff;" text="SHOW HISTORY" textFill="WHITE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="179.0" AnchorPane.rightAnchor="179.0">
+               <font>
+                  <Font name="System Bold" size="23.0" />
+               </font>
+            </Button>
+         </children>
+      </AnchorPane>
+   </center>
+   <left>
+      <VBox prefHeight="678.0" prefWidth="337.0" style="-fx-background-color: #e3e3e3;" BorderPane.alignment="CENTER">
+         <children>
+            <AnchorPane prefHeight="217.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
+               <children>
+                  <StackPane layoutX="88.0" layoutY="19.0" AnchorPane.topAnchor="19.0">
+                     <children>
+                        <Circle fx:id="t0Circle" fill="WHITE" radius="81.0" stroke="#1f9aff" strokeType="INSIDE" strokeWidth="11.0">
+                           <cursor>
+                              <Cursor fx:constant="DEFAULT" />
+                           </cursor>
+                        </Circle>
+                        <Label fx:id="valueT0" prefHeight="83.0" prefWidth="127.0" text="20.20">
+                           <font>
+                              <Font name="System Bold" size="48.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </StackPane>
+                  <Label layoutX="88.0" layoutY="181.0" prefHeight="39.0" prefWidth="162.0" text="Thermometer 0">
+                     <font>
+                        <Font name="System Bold" size="22.0" />
+                     </font>
+                  </Label>
+               </children>
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+            </AnchorPane>
+            <AnchorPane prefHeight="217.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
+               <children>
+                  <StackPane layoutX="88.0" layoutY="19.0" AnchorPane.bottomAnchor="39.0" AnchorPane.topAnchor="19.0">
+                     <children>
+                        <Circle fx:id="t1Circle" fill="WHITE" radius="81.0" stroke="#1f9aff" strokeType="INSIDE" strokeWidth="11.0">
+                           <cursor>
+                              <Cursor fx:constant="DEFAULT" />
+                           </cursor>
+                        </Circle>
+                        <Label fx:id="valueT1" prefHeight="83.0" prefWidth="127.0" text="20.20" textAlignment="CENTER" wrapText="true">
+                           <font>
+                              <Font name="System Bold" size="48.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </StackPane>
+                  <Label layoutX="88.0" layoutY="181.0" prefHeight="39.0" prefWidth="162.0" text="Thermometer 1" AnchorPane.bottomAnchor="0.0" AnchorPane.topAnchor="181.0">
+                     <font>
+                        <Font name="System Bold" size="22.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+            <AnchorPane prefHeight="216.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
+               <children>
+                  <StackPane layoutX="88.0" layoutY="19.0" AnchorPane.bottomAnchor="31.0">
+                     <children>
+                        <Circle fx:id="t2Circle" fill="WHITE" radius="81.0" stroke="#1f9aff" strokeType="INSIDE" strokeWidth="11.0">
+                           <cursor>
+                              <Cursor fx:constant="DEFAULT" />
+                           </cursor>
+                        </Circle>
+                        <Label fx:id="valueT2" prefHeight="83.0" prefWidth="127.0" text="20.20" textAlignment="CENTER">
+                           <font>
+                              <Font name="System Bold" size="48.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </StackPane>
+                  <Label layoutX="88.0" layoutY="173.0" prefHeight="39.0" prefWidth="162.0" text="Thermometer 2" AnchorPane.bottomAnchor="0.0">
+                     <font>
+                        <Font name="System Bold" size="22.0" />
+                     </font>
+                  </Label>
+               </children>
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+            </AnchorPane>
          </children>
          <effect>
-            <DropShadow color="BLUE" offsetX="1.0" offsetY="1.0" />
+            <DropShadow />
          </effect>
-      </AnchorPane>
-      <VBox layoutX="385.0" prefHeight="650.0" prefWidth="68.0">
-         <children>
-            <Button fx:id="increaseButton" mnemonicParsing="false" prefHeight="160.0" prefWidth="71.0" style="-fx-background-color: #008aff;">
-               <VBox.margin>
-                  <Insets top="110.0" />
-               </VBox.margin>
-               <graphic>
-                  <ImageView fitHeight="85.0" fitWidth="52.0" preserveRatio="true">
-                     <image>
-                        <Image url="@../images/up-arrow.png" />
-                     </image>
-                  </ImageView>
-               </graphic>
-            </Button>
-            <Button fx:id="decreaseButton" mnemonicParsing="false" prefHeight="160.0" prefWidth="71.0" style="-fx-background-color: #008aff;">
-               <VBox.margin>
-                  <Insets top="110.0" />
-               </VBox.margin>
-               <graphic>
-                  <ImageView fitHeight="103.0" fitWidth="52.0" preserveRatio="true">
-                     <image>
-                        <Image url="@../images/down-arrow.png" />
-                     </image>
-                  </ImageView>
-               </graphic>
-            </Button>
-         </children>
       </VBox>
       <Label layoutX="580.0" layoutY="76.0" prefHeight="113.0" prefWidth="356.0" text="Power Position" textFill="#008aff">
          <font>

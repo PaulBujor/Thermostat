@@ -124,6 +124,6 @@ public class MainViewModel implements PropertyChangeListener {
                     error.set("Critical temperature");
                     break;
             }
-        });
+
     }
 }
