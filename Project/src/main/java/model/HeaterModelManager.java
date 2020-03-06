@@ -97,22 +97,4 @@ public class HeaterModelManager implements HeaterModel, PropertyChangeListener {
         }
         return result;
     }
-
-    public ArrayList<Temperature> getTemperatures(String id, int number) {
-        ArrayList<Temperature> result = new ArrayList<Temperature>();
-        int limit = Math.min(number, tempList.size());
-        try {
-            for (int i = 0; i < limit; i++) {
-                if (tempList.get(i).getId().equals(id))
-                    result.add(tempList.get(i));
-                else
-                    i--;
-            }
-        } catch (IndexOutOfBoundsException e) {
-            //
-        } finally {
-            return result;
-        }
-    }
-
 }
