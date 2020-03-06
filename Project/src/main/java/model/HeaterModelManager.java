@@ -7,6 +7,7 @@ import model.thermometer.OutsideThermometer;
 import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
 import java.beans.PropertyChangeSupport;
+import java.util.ArrayList;
 
 public class HeaterModelManager implements HeaterModel, PropertyChangeListener {
     private PropertyChangeSupport property;
@@ -16,11 +17,14 @@ public class HeaterModelManager implements HeaterModel, PropertyChangeListener {
     private double externalTemp = 0;
     private InternalThermometer t1;
     private InternalThermometer t2;
+    private ArrayList<Temperature> tempList;
+
 
     public HeaterModelManager() {
         heater = new Heater();
         property = new PropertyChangeSupport(this);
         OutsideThermometer outT = new OutsideThermometer();
+        tempList = new ArrayList<Temperature>();
         t1 = new InternalThermometer("t1", 1);
         t2 = new InternalThermometer("t2", 7);
         heater.addListener("heater", this);
@@ -40,7 +44,7 @@ public class HeaterModelManager implements HeaterModel, PropertyChangeListener {
 
     @Override
     public void propertyChange(PropertyChangeEvent evt) {
-        switch(evt.getPropertyName()) {
+        switch (evt.getPropertyName()) {
             case "t0":
                 double oldExternalTemp = externalTemp;
                 externalTemp = (Double) evt.getNewValue();
@@ -58,6 +62,9 @@ public class HeaterModelManager implements HeaterModel, PropertyChangeListener {
                 t2.changeHeaterMode(heater.status());
                 break;
         }
+        if (!evt.getPropertyName().equals("heater"))
+            addTemp(new Temperature(evt.getPropertyName(), (Double) evt.getNewValue()));
+
     }
 
     @Override
@@ -78,5 +85,34 @@ public class HeaterModelManager implements HeaterModel, PropertyChangeListener {
         heater.down();
     }
 
+    private void addTemp(Temperature temperature) {
+        tempList.add(temperature);
+    }
+
+    public ArrayList<Temperature> getTemperatures(int number) {
+        ArrayList<Temperature> result = new ArrayList<Temperature>();
+        int limit = Math.min(number, tempList.size());
+        for (int i = 0; i < limit; i++) {
+            result.add(tempList.get(i));
+        }
+        return result;
+    }
+
+    public ArrayList<Temperature> getTemperatures(String id, int number) {
+        ArrayList<Temperature> result = new ArrayList<Temperature>();
+        int limit = Math.min(number, tempList.size());
+        try {
+            for (int i = 0; i < limit; i++) {
+                if (tempList.get(i).getId().equals(id))
+                    result.add(tempList.get(i));
+                else
+                    i--;
+            }
+        } catch (IndexOutOfBoundsException e) {
+            //
+        } finally {
+            return result;
+        }
+    }
 
 }
