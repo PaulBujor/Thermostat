@@ -26,11 +26,11 @@ public class InternalThermometer implements Runnable, PropertyChangeSubject {
     @Override
     public void run() {
         while (true) {
-            double newTemp = temperature(lastTemp, heaterMode, distance, outTemp, 6);
+            double newTemp = temperature(lastTemp, heaterMode, distance, outTemp, 3);
             property.firePropertyChange(thermoId, lastTemp, newTemp);
             lastTemp = newTemp;
             try {
-                Thread.sleep(6000);
+                Thread.sleep(3000);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
