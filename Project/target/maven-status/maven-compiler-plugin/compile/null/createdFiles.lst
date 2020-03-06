@@ -8,14 +8,17 @@ viewmodel\MainViewModel.class
 model\heater\HeaterPosition3.class
 module-info.class
 model\thermometer\OutsideThermometer.class
+viewmodel\SecondaryViewModel.class
 utility\StringDoubleConverter.class
 viewmodel\ViewModelFactory.class
+model\Temperature.class
 utility\PropertyChangeSubject.class
 model\Testing.class
 model\heater\HeaterPosition0.class
 view\ViewHandler.class
 model\HeaterModelManager.class
 model\heater\Heater.class
+view\TableRowData.class
 model\heater\HeaterState.class
 model\HeaterModel.class
 model\heater\HeaterPosition2.class

@@ -16,31 +16,29 @@ public class TableRowData {
     private DoubleProperty temperatureValue;
     private StringProperty time;
 
+    public TableRowData(Temperature temperature) {
+        thermometerID = new SimpleStringProperty(temperature.getId());
+        time = new SimpleStringProperty();
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("HH:mm:ss");
+        time.set(temperature.getTimeStamp().format(formatter));
+        temperatureValue = new SimpleDoubleProperty(temperature.getTemperature());
+    }
 
 
-public TableRowData(Temperature temperature){
-thermometerID = new SimpleStringProperty(temperature.getId());
-DateTimeFormatter formatter = DateTimeFormatter.ofPattern("HH:mm:ss");
-time.set(temperature.getTimeStamp().format(formatter));
-temperatureValue = new SimpleDoubleProperty(temperature.getTemperature());
-}
+    public StringProperty thermometerIDProperty() {
+        return thermometerID;
+    }
 
+    public DoubleProperty temperatureValueProperty() {
+        return temperatureValue;
+    }
 
-  public StringProperty thermometerIDProperty()
-  {
-    return thermometerID;
-  }
+    public StringProperty timeStampStringProperty() {
+        return time;
+    }
 
-  public DoubleProperty temperatureValueProperty()
-  {
-    return temperatureValue;
-  }
-  public StringProperty timeStampStringProperty(){
-  return time;
-  }
-
-  public Temperature getTemperature(){
-/*  return new Temperature(thermometerIDProperty().get(),temperatureValueProperty().get(),timeStampStringProperty());*/
-    return  null;
-  }
+    public Temperature getTemperature() {
+        /*  return new Temperature(thermometerIDProperty().get(),temperatureValueProperty().get(),timeStampStringProperty());*/
+        return null;
+    }
 }

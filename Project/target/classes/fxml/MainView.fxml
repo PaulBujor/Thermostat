@@ -130,10 +130,15 @@
             </Label>
          </children>
       </Pane>
-      <Button layoutX="580.0" layoutY="584.0" mnemonicParsing="false" prefHeight="51.0" prefWidth="356.0" style="-fx-background-color: #008aff;" text="SHOW HISTORY" textFill="WHITE">
+      <Button fx:id="showHistoryButton" layoutX="580.0" layoutY="584.0" mnemonicParsing="false" onAction="#showHistoryButtonPressed" prefHeight="51.0" prefWidth="356.0" style="-fx-background-color: #008aff;" text="SHOW HISTORY" textFill="WHITE">
          <font>
             <Font name="System Bold" size="23.0" />
          </font>
       </Button>
+      <Label fx:id="errorLabel" layoutX="388.0" layoutY="51.0" prefHeight="17.0" prefWidth="582.0" text="Error" textAlignment="CENTER" textFill="RED">
+         <font>
+            <Font name="System Bold Italic" size="25.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>

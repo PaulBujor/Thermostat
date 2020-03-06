@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="650.0" prefWidth="1050.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.SecondaryController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="650.0" prefWidth="1050.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.SecondaryController">
     <children>
         <Label layoutX="272.0" layoutY="21.0" prefHeight="57.0" prefWidth="597.0" text="Thermometer history" textFill="#008aff">
             <font>
@@ -16,7 +16,7 @@
             </font>
         </Label>
         <Pane layoutX="658.0" layoutY="231.0" prefHeight="200.0" prefWidth="200.0" />
-        <Button fx:id="switchToMainButton" layoutX="580.0" layoutY="585.0" mnemonicParsing="false" onAction="#switchToMainButtonPressed" prefHeight="51.0" prefWidth="356.0" style="-fx-background-color: #008aff;" text="Main view" textFill="WHITE">
+        <Button layoutX="580.0" layoutY="585.0" mnemonicParsing="false" onAction="#switchToMainButtonPressed" prefHeight="51.0" prefWidth="356.0" style="-fx-background-color: #008aff;" text="Main view" textFill="WHITE">
             <font>
                 <Font name="System Bold" size="23.0" />
             </font>

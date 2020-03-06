@@ -1,23 +1,18 @@
 package model;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.time.LocalTime;
 
 public class Temperature {
     private String id;
     private Double temperature;
-    private LocalDate timeStamp;
+    private LocalDateTime timeStamp;
 
     public Temperature(String id, Double temperature) {
         this.id = id;
         this.temperature = temperature;
-        timeStamp = LocalDate.now();
-    }
-
-    public Temperature(String id, Double temperature, LocalDate timeStamp) {
-        this.id = id;
-        this.temperature = temperature;
-        this.timeStamp = timeStamp;
+        timeStamp = LocalDateTime.now();
     }
 
     public String getId() {
@@ -28,7 +23,7 @@ public class Temperature {
         return temperature;
     }
 
-    public LocalDate getTimeStamp() {
+    public LocalDateTime getTimeStamp() {
         return timeStamp;
     }
 }
