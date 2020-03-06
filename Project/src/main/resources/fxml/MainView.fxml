@@ -20,7 +20,7 @@
    <center>
       <AnchorPane prefHeight="639.0" prefWidth="718.0">
          <children>
-            <Label alignment="CENTER" layoutX="261.0" layoutY="134.0" prefHeight="53.0" prefWidth="356.0" text="Power Position" textFill="#008aff" AnchorPane.bottomAnchor="445.0" AnchorPane.leftAnchor="261.0" AnchorPane.rightAnchor="96.0" AnchorPane.topAnchor="134.0">
+            <Label alignment="CENTER" layoutX="261.0" layoutY="134.0" prefHeight="53.0" prefWidth="356.0" text="Power Position" textFill="#008aff" AnchorPane.bottomAnchor="445.0" AnchorPane.leftAnchor="261.0" AnchorPane.rightAnchor="96.0" AnchorPane.topAnchor="135.0">
                <font>
                   <Font name="System Bold" size="50.0" />
                </font>
@@ -154,30 +154,5 @@
             <DropShadow />
          </effect>
       </VBox>
-      <Label layoutX="580.0" layoutY="76.0" prefHeight="113.0" prefWidth="356.0" text="Power Position" textFill="#008aff">
-         <font>
-            <Font name="System Bold" size="50.0" />
-         </font>
-      </Label>
-      <Pane layoutX="658.0" layoutY="231.0" prefHeight="200.0" prefWidth="200.0">
-         <children>
-            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#1f93ff00" height="200.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="8.0" width="200.0" />
-            <Label fx:id="powerPosition" layoutX="73.0" layoutY="19.0" prefHeight="162.0" prefWidth="35.0" text="0" textAlignment="CENTER" textFill="#008aff">
-               <font>
-                  <Font name="System Bold" size="94.0" />
-               </font>
-            </Label>
-         </children>
-      </Pane>
-      <Button fx:id="showHistoryButton" layoutX="580.0" layoutY="584.0" mnemonicParsing="false" onAction="#showHistoryButtonPressed" prefHeight="51.0" prefWidth="356.0" style="-fx-background-color: #008aff;" text="SHOW HISTORY" textFill="WHITE">
-         <font>
-            <Font name="System Bold" size="23.0" />
-         </font>
-      </Button>
-      <Label fx:id="errorLabel" layoutX="388.0" layoutY="51.0" prefHeight="17.0" prefWidth="582.0" text="Error" textAlignment="CENTER" textFill="RED">
-         <font>
-            <Font name="System Bold Italic" size="25.0" />
-         </font>
-      </Label>
-   </children>
-</AnchorPane>
+   </left>
+</BorderPane>
