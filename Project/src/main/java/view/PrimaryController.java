@@ -46,6 +46,9 @@ public class PrimaryController {
     @FXML
     private Label powerPosition;
 
+    @FXML
+    private Label errorLabel;
+
     private Region root;
     private ViewHandler viewHandler;
     private MainViewModel viewModel;
@@ -62,7 +65,7 @@ public class PrimaryController {
         Bindings.bindBidirectional(valueT1.textProperty(), viewModel.t1Property(), new StringDoubleConverter(10));
         Bindings.bindBidirectional(valueT2.textProperty(), viewModel.t2Property(), new StringDoubleConverter(10));
         Bindings.bindBidirectional(powerPosition.textProperty(), viewModel.heaterStateProperty(), new StringIntegerConverter(0));
-
+        Bindings.bindBidirectional(errorLabel.textProperty(), viewModel.errorProperty());
 
         increaseButton.setOnAction((evt) -> viewModel.increaseTemperature());
         decreaseButton.setOnAction((evt) -> viewModel.decreaseTemperature());
@@ -89,6 +92,7 @@ public class PrimaryController {
         valueT1.setText("0");
         valueT2.setText("0");
         powerPosition.setText("0");
+        errorLabel.setText("");
     }
 
     public Region getRoot() {
