@@ -3,6 +3,7 @@ package viewmodel;
 import javafx.beans.Observable;
 import javafx.beans.property.DoubleProperty;
 import javafx.beans.property.SimpleDoubleProperty;
+import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import model.HeaterModel;
 import view.TableRowData;
@@ -25,6 +26,7 @@ public class SecondaryViewModel implements PropertyChangeListener
     t0 = new SimpleDoubleProperty();
     t1 = new SimpleDoubleProperty();
     t2 = new SimpleDoubleProperty();
+    list = createList();
     model.addListener("t0",this);
     model.addListener("t1",this);
     model.addListener("t2",this);
@@ -45,9 +47,10 @@ public class SecondaryViewModel implements PropertyChangeListener
     return t2;
   }
   //TODO
-/*private ObservableList<TableRowData> createList(){
+private ObservableList<TableRowData> createList(){
+return   FXCollections.observableArrayList();
 
-}*/
+}
 
 public ObservableList<TableRowData> getList(){
   return  list;

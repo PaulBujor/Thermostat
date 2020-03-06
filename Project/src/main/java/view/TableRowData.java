@@ -1,17 +1,19 @@
 package view;
 
 import javafx.beans.property.DoubleProperty;
+import javafx.beans.property.SimpleStringProperty;
+import javafx.beans.property.StringProperty;
 import model.thermometer.InternalThermometer;
 import model.thermometer.OutsideThermometer;
 
 public class TableRowData
 {
-private DoubleProperty thermometer0;
-private DoubleProperty thermometer1;
-private DoubleProperty thermometer2;
+private StringProperty thermometerID;
+private DoubleProperty temperatureValue;
 
 
-public TableRowData(InternalThermometer internalThermometer, OutsideThermometer outsideThermometer){
 
+public TableRowData(Temperature temperature){
+thermometerID = new SimpleStringProperty(temperature.getId());
 }
 }
