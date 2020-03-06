@@ -92,7 +92,7 @@ public class HeaterModelManager implements HeaterModel, PropertyChangeListener {
     public ArrayList<Temperature> getTemperatures(int number) {
         ArrayList<Temperature> result = new ArrayList<Temperature>();
         int limit = Math.min(number, tempList.size());
-        for (int i = 0; i < limit; i++) {
+        for (int i = tempList.size()-1; i > tempList.size()-limit; i++) {
             result.add(tempList.get(i));
         }
         return result;
