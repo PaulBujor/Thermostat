@@ -60,22 +60,19 @@ public class MainViewModel implements PropertyChangeListener {
         model.heaterDown();
     }
 
-    public Color gett0Color()
-    {
+    public Color gett0Color() {
         return t0Color;
     }
 
-    public Color gett1Color()
-    {
+    public Color gett1Color() {
         return t1Color;
     }
 
-    public Color gett2Color()
-    {
+    public Color gett2Color() {
         return t2Color;
     }
 
-    public StringProperty errorProperty(){
+    public StringProperty errorProperty() {
         return error;
     }
 
@@ -86,35 +83,26 @@ public class MainViewModel implements PropertyChangeListener {
             switch (evt.getPropertyName()) {
                 case "t0":
                     t0.setValue((Double) evt.getNewValue());
-                    if ((Double) evt.getNewValue() <= 0)
-                    {
-                       t0Color = Color.rgb(31,154,255);
-                    }
-                    else
-                    {
-                        t0Color = Color.rgb(255,33,33);
+                    if ((Double) evt.getNewValue() <= 0) {
+                        t0Color = Color.rgb(31, 154, 255);
+                    } else {
+                        t0Color = Color.rgb(255, 33, 33);
                     }
                     break;
                 case "t1":
                     t1.setValue((Double) evt.getNewValue());
-                    if ((Double) evt.getNewValue() <= 0)
-                    {
-                        t1Color = Color.rgb(31,154,255);
-                    }
-                    else
-                    {
-                        t1Color = Color.rgb(255,33,33);
+                    if ((Double) evt.getNewValue() <= 0) {
+                        t1Color = Color.rgb(31, 154, 255);
+                    } else {
+                        t1Color = Color.rgb(255, 33, 33);
                     }
                     break;
                 case "t2":
                     t2.setValue((Double) evt.getNewValue());
-                    if ((Double) evt.getNewValue() <= 0)
-                    {
-                        t2Color = Color.rgb(31,154,255);
-                    }
-                    else
-                    {
-                        t2Color = Color.rgb(255,33,33);
+                    if ((Double) evt.getNewValue() <= 0) {
+                        t2Color = Color.rgb(31, 154, 255);
+                    } else {
+                        t2Color = Color.rgb(255, 33, 33);
                     }
                     break;
                 case "heater":
@@ -124,6 +112,6 @@ public class MainViewModel implements PropertyChangeListener {
                     error.set("Critical temperature");
                     break;
             }
-
+        });
     }
 }
