@@ -46,11 +46,6 @@ public class PrimaryController {
     @FXML
     private Label powerPosition;
 
-
-<<<<<<< HEAD
-=======
-
->>>>>>> 202402aa5ca4a1ea72945847187c12c9ce23616b
     private Region root;
     private ViewHandler viewHandler;
     private MainViewModel viewModel;
