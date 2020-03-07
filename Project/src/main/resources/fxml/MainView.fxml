@@ -67,7 +67,7 @@
                   </Button>
                </children>
             </VBox>
-            <Button fx:id="showHistoryButton" alignment="BOTTOM_CENTER" layoutX="179.0" layoutY="601.0" mnemonicParsing="false" onAction="#showHistoryButtonPressed" prefHeight="51.0" prefWidth="356.0" stylesheets="@../css/style.css" text="SHOW HISTORY" textFill="WHITE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="179.0" AnchorPane.rightAnchor="179.0">
+            <Button fx:id="showHistoryButton" alignment="BOTTOM_CENTER" layoutX="179.0" layoutY="590.0" mnemonicParsing="false" onAction="#showHistoryButtonPressed" prefHeight="51.0" prefWidth="356.0" stylesheets="@../css/style.css" text="SHOW HISTORY" textFill="WHITE" AnchorPane.bottomAnchor="12.0" AnchorPane.leftAnchor="179.0" AnchorPane.rightAnchor="179.0">
                <font>
                   <Font name="System Bold" size="23.0" />
                </font>
@@ -87,7 +87,7 @@
                               <Cursor fx:constant="DEFAULT" />
                            </cursor>
                         </Circle>
-                        <Label fx:id="valueT0" prefHeight="83.0" prefWidth="127.0" text="20.20">
+                        <Label fx:id="valueT0" alignment="CENTER" prefHeight="83.0" prefWidth="127.0" text="20.20" textAlignment="CENTER" StackPane.alignment="CENTER">
                            <font>
                               <Font name="System Bold" size="48.0" />
                            </font>
@@ -113,7 +113,7 @@
                               <Cursor fx:constant="DEFAULT" />
                            </cursor>
                         </Circle>
-                        <Label fx:id="valueT1" prefHeight="83.0" prefWidth="127.0" text="20.20" textAlignment="CENTER" wrapText="true">
+                        <Label fx:id="valueT1" alignment="CENTER" prefHeight="83.0" prefWidth="127.0" text="20.20" textAlignment="CENTER" wrapText="true" StackPane.alignment="CENTER">
                            <font>
                               <Font name="System Bold" size="48.0" />
                            </font>
@@ -136,7 +136,7 @@
                               <Cursor fx:constant="DEFAULT" />
                            </cursor>
                         </Circle>
-                        <Label fx:id="valueT2" prefHeight="83.0" prefWidth="127.0" text="20.20" textAlignment="CENTER">
+                        <Label fx:id="valueT2" alignment="CENTER" prefHeight="83.0" prefWidth="127.0" text="20.20" textAlignment="CENTER" StackPane.alignment="CENTER">
                            <font>
                               <Font name="System Bold" size="48.0" />
                            </font>

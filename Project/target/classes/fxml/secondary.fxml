@@ -21,7 +21,7 @@
                 <Font name="System Bold" size="23.0" />
             </font>
         </Button>
-      <TableView fx:id="thermometerTable" layoutX="135.0" layoutY="99.0" prefHeight="453.0" prefWidth="786.0" AnchorPane.bottomAnchor="98.0" AnchorPane.leftAnchor="135.0" AnchorPane.rightAnchor="129.0" AnchorPane.topAnchor="99.0">
+      <TableView fx:id="thermometerTable" layoutX="135.0" layoutY="99.0" prefHeight="453.0" prefWidth="786.0" stylesheets="@../css/style.css" AnchorPane.bottomAnchor="98.0" AnchorPane.leftAnchor="135.0" AnchorPane.rightAnchor="129.0" AnchorPane.topAnchor="99.0">
         <columns>
           <TableColumn fx:id="thermometerIdColumn" prefWidth="127.0" text="ID" />
           <TableColumn fx:id="temperatureValue" prefWidth="119.0" text="Value" />
