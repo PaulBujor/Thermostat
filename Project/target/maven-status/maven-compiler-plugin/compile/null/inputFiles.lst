@@ -1,24 +1,24 @@
-C:\Users\bujor\OneDrive - ViaUC\Skrivebord\SDJ2-Assignment1\Project\src\main\java\model\heater\HeaterPosition1.java
-C:\Users\bujor\OneDrive - ViaUC\Skrivebord\SDJ2-Assignment1\Project\src\main\java\model\HeaterModel.java
-C:\Users\bujor\OneDrive - ViaUC\Skrivebord\SDJ2-Assignment1\Project\src\main\java\module-info.java
-C:\Users\bujor\OneDrive - ViaUC\Skrivebord\SDJ2-Assignment1\Project\src\main\java\utility\StringDoubleConverter.java
-C:\Users\bujor\OneDrive - ViaUC\Skrivebord\SDJ2-Assignment1\Project\src\main\java\view\PrimaryController.java
-C:\Users\bujor\OneDrive - ViaUC\Skrivebord\SDJ2-Assignment1\Project\src\main\java\view\ViewHandler.java
-C:\Users\bujor\OneDrive - ViaUC\Skrivebord\SDJ2-Assignment1\Project\src\main\java\viewmodel\SecondaryViewModel.java
-C:\Users\bujor\OneDrive - ViaUC\Skrivebord\SDJ2-Assignment1\Project\src\main\java\model\heater\HeaterPosition2.java
-C:\Users\bujor\OneDrive - ViaUC\Skrivebord\SDJ2-Assignment1\Project\src\main\java\model\thermometer\OutsideThermometer.java
-C:\Users\bujor\OneDrive - ViaUC\Skrivebord\SDJ2-Assignment1\Project\src\main\java\utility\PropertyChangeSubject.java
-C:\Users\bujor\OneDrive - ViaUC\Skrivebord\SDJ2-Assignment1\Project\src\main\java\view\TableRowData.java
-C:\Users\bujor\OneDrive - ViaUC\Skrivebord\SDJ2-Assignment1\Project\src\main\java\app\App.java
-C:\Users\bujor\OneDrive - ViaUC\Skrivebord\SDJ2-Assignment1\Project\src\main\java\model\heater\HeaterState.java
-C:\Users\bujor\OneDrive - ViaUC\Skrivebord\SDJ2-Assignment1\Project\src\main\java\viewmodel\MainViewModel.java
-C:\Users\bujor\OneDrive - ViaUC\Skrivebord\SDJ2-Assignment1\Project\src\main\java\model\heater\Heater.java
-C:\Users\bujor\OneDrive - ViaUC\Skrivebord\SDJ2-Assignment1\Project\src\main\java\model\Temperature.java
-C:\Users\bujor\OneDrive - ViaUC\Skrivebord\SDJ2-Assignment1\Project\src\main\java\model\heater\HeaterPosition0.java
-C:\Users\bujor\OneDrive - ViaUC\Skrivebord\SDJ2-Assignment1\Project\src\main\java\model\heater\HeaterPosition3.java
-C:\Users\bujor\OneDrive - ViaUC\Skrivebord\SDJ2-Assignment1\Project\src\main\java\model\thermometer\InternalThermometer.java
-C:\Users\bujor\OneDrive - ViaUC\Skrivebord\SDJ2-Assignment1\Project\src\main\java\view\SecondaryController.java
-C:\Users\bujor\OneDrive - ViaUC\Skrivebord\SDJ2-Assignment1\Project\src\main\java\viewmodel\ViewModelFactory.java
-C:\Users\bujor\OneDrive - ViaUC\Skrivebord\SDJ2-Assignment1\Project\src\main\java\utility\StringIntegerConverter.java
-C:\Users\bujor\OneDrive - ViaUC\Skrivebord\SDJ2-Assignment1\Project\src\main\java\model\Testing.java
-C:\Users\bujor\OneDrive - ViaUC\Skrivebord\SDJ2-Assignment1\Project\src\main\java\model\HeaterModelManager.java
+C:\Users\T\Desktop\VIA Uni\SDJ2\SDJ2-Assignment1\Project\src\main\java\view\ViewHandler.java
+C:\Users\T\Desktop\VIA Uni\SDJ2\SDJ2-Assignment1\Project\src\main\java\model\Temperature.java
+C:\Users\T\Desktop\VIA Uni\SDJ2\SDJ2-Assignment1\Project\src\main\java\utility\StringIntegerConverter.java
+C:\Users\T\Desktop\VIA Uni\SDJ2\SDJ2-Assignment1\Project\src\main\java\model\heater\HeaterPosition2.java
+C:\Users\T\Desktop\VIA Uni\SDJ2\SDJ2-Assignment1\Project\src\main\java\model\thermometer\InternalThermometer.java
+C:\Users\T\Desktop\VIA Uni\SDJ2\SDJ2-Assignment1\Project\src\main\java\view\SecondaryController.java
+C:\Users\T\Desktop\VIA Uni\SDJ2\SDJ2-Assignment1\Project\src\main\java\utility\StringDoubleConverter.java
+C:\Users\T\Desktop\VIA Uni\SDJ2\SDJ2-Assignment1\Project\src\main\java\app\App.java
+C:\Users\T\Desktop\VIA Uni\SDJ2\SDJ2-Assignment1\Project\src\main\java\viewmodel\MainViewModel.java
+C:\Users\T\Desktop\VIA Uni\SDJ2\SDJ2-Assignment1\Project\src\main\java\model\heater\Heater.java
+C:\Users\T\Desktop\VIA Uni\SDJ2\SDJ2-Assignment1\Project\src\main\java\model\heater\HeaterState.java
+C:\Users\T\Desktop\VIA Uni\SDJ2\SDJ2-Assignment1\Project\src\main\java\model\Testing.java
+C:\Users\T\Desktop\VIA Uni\SDJ2\SDJ2-Assignment1\Project\src\main\java\module-info.java
+C:\Users\T\Desktop\VIA Uni\SDJ2\SDJ2-Assignment1\Project\src\main\java\view\TableRowData.java
+C:\Users\T\Desktop\VIA Uni\SDJ2\SDJ2-Assignment1\Project\src\main\java\model\HeaterModel.java
+C:\Users\T\Desktop\VIA Uni\SDJ2\SDJ2-Assignment1\Project\src\main\java\viewmodel\ViewModelFactory.java
+C:\Users\T\Desktop\VIA Uni\SDJ2\SDJ2-Assignment1\Project\src\main\java\model\thermometer\OutsideThermometer.java
+C:\Users\T\Desktop\VIA Uni\SDJ2\SDJ2-Assignment1\Project\src\main\java\model\heater\HeaterPosition1.java
+C:\Users\T\Desktop\VIA Uni\SDJ2\SDJ2-Assignment1\Project\src\main\java\view\PrimaryController.java
+C:\Users\T\Desktop\VIA Uni\SDJ2\SDJ2-Assignment1\Project\src\main\java\model\heater\HeaterPosition0.java
+C:\Users\T\Desktop\VIA Uni\SDJ2\SDJ2-Assignment1\Project\src\main\java\utility\PropertyChangeSubject.java
+C:\Users\T\Desktop\VIA Uni\SDJ2\SDJ2-Assignment1\Project\src\main\java\model\heater\HeaterPosition3.java
+C:\Users\T\Desktop\VIA Uni\SDJ2\SDJ2-Assignment1\Project\src\main\java\model\HeaterModelManager.java
+C:\Users\T\Desktop\VIA Uni\SDJ2\SDJ2-Assignment1\Project\src\main\java\viewmodel\SecondaryViewModel.java

@@ -15,12 +15,16 @@
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-
 <BorderPane prefHeight="650.0" prefWidth="1050.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.PrimaryController">
    <center>
       <AnchorPane prefHeight="639.0" prefWidth="718.0">
          <children>
-            <Label alignment="CENTER" layoutX="261.0" layoutY="134.0" prefHeight="53.0" prefWidth="356.0" text="Power Position" textFill="#008aff" AnchorPane.bottomAnchor="445.0" AnchorPane.leftAnchor="261.0" AnchorPane.rightAnchor="96.0" AnchorPane.topAnchor="135.0">
+            <Label fx:id="errorLabel" layoutX="9.0" layoutY="4.0" prefHeight="34.0" prefWidth="632.0" textFill="RED" AnchorPane.leftAnchor="9.0" AnchorPane.topAnchor="4.0">
+               <font>
+                  <Font name="System Bold Italic" size="23.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" layoutX="261.0" layoutY="134.0" prefHeight="500.0" prefWidth="1500.0" text="Power Position" textFill="#008aff" AnchorPane.bottomAnchor="445.0" AnchorPane.leftAnchor="261.0" AnchorPane.rightAnchor="96.0" AnchorPane.topAnchor="135.0">
                <font>
                   <Font name="System Bold" size="50.0" />
                </font>
@@ -37,7 +41,7 @@
             </StackPane>
             <VBox alignment="CENTER" layoutX="66.0" prefHeight="687.0" prefWidth="68.0" spacing="150.0" AnchorPane.bottomAnchor="0.0" AnchorPane.topAnchor="0.0">
                <children>
-                  <Button fx:id="increaseButton" mnemonicParsing="false" prefHeight="160.0" prefWidth="71.0" style="-fx-background-color: #008aff;">
+                  <Button fx:id="increaseButton" mnemonicParsing="false" prefHeight="160.0" prefWidth="71.0" stylesheets="@../css/style.css">
                      <VBox.margin>
                         <Insets />
                      </VBox.margin>
@@ -49,7 +53,7 @@
                         </ImageView>
                      </graphic>
                   </Button>
-                  <Button fx:id="decreaseButton" mnemonicParsing="false" prefHeight="160.0" prefWidth="71.0" style="-fx-background-color: #008aff;">
+                  <Button fx:id="decreaseButton" mnemonicParsing="false" prefHeight="160.0" prefWidth="71.0" stylesheets="@../css/style.css">
                      <VBox.margin>
                         <Insets />
                      </VBox.margin>
@@ -63,7 +67,7 @@
                   </Button>
                </children>
             </VBox>
-            <Button fx:id="showHistoryButton" alignment="BOTTOM_CENTER" layoutX="179.0" layoutY="601.0" mnemonicParsing="false" onAction="#showHistoryButtonPressed" prefHeight="51.0" prefWidth="356.0" style="-fx-background-color: #008aff;" text="SHOW HISTORY" textFill="WHITE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="179.0" AnchorPane.rightAnchor="179.0">
+            <Button fx:id="showHistoryButton" alignment="BOTTOM_CENTER" layoutX="179.0" layoutY="601.0" mnemonicParsing="false" onAction="#showHistoryButtonPressed" prefHeight="51.0" prefWidth="356.0" stylesheets="@../css/style.css" text="SHOW HISTORY" textFill="WHITE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="179.0" AnchorPane.rightAnchor="179.0">
                <font>
                   <Font name="System Bold" size="23.0" />
                </font>

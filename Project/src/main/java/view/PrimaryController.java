@@ -1,16 +1,10 @@
 package view;
 
-import java.io.IOException;
-
 import javafx.beans.binding.Bindings;
-import javafx.beans.property.IntegerProperty;
-import javafx.beans.property.SimpleIntegerProperty;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.Region;
-import javafx.scene.paint.Color;
-import javafx.scene.paint.Paint;
 import javafx.scene.shape.Circle;
 import utility.StringDoubleConverter;
 import utility.StringIntegerConverter;
@@ -47,7 +41,7 @@ public class PrimaryController {
     private Label powerPosition;
 
     @FXML
-    private Label errorLabel;
+    private Label errorLabel = null;
 
     private Region root;
     private ViewHandler viewHandler;

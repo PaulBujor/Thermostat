@@ -10,22 +10,22 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="650.0" prefWidth="1050.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.SecondaryController">
     <children>
-        <Label layoutX="272.0" layoutY="21.0" prefHeight="57.0" prefWidth="597.0" text="Thermometer history" textFill="#008aff">
+        <Label alignment="CENTER" contentDisplay="CENTER" layoutX="259.0" layoutY="14.0" prefHeight="73.0" prefWidth="533.0" text="Thermometer history" textAlignment="CENTER" textFill="#008aff" AnchorPane.leftAnchor="259.0" AnchorPane.rightAnchor="258.0">
             <font>
                 <Font name="System Bold" size="50.0" />
             </font>
         </Label>
-        <Pane layoutX="658.0" layoutY="231.0" prefHeight="200.0" prefWidth="200.0" />
-        <Button layoutX="580.0" layoutY="585.0" mnemonicParsing="false" onAction="#switchToMainButtonPressed" prefHeight="51.0" prefWidth="356.0" style="-fx-background-color: #008aff;" text="Main view" textFill="WHITE">
+        <Pane layoutX="658.0" layoutY="231.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="219.0" AnchorPane.leftAnchor="658.0" AnchorPane.rightAnchor="192.0" AnchorPane.topAnchor="231.0" />
+        <Button layoutX="580.0" layoutY="585.0" mnemonicParsing="false" onAction="#switchToMainButtonPressed" prefHeight="51.0" prefWidth="340.0" stylesheets="@../css/style.css" text="Main view" textFill="WHITE" AnchorPane.bottomAnchor="14.0" AnchorPane.rightAnchor="130.0">
             <font>
                 <Font name="System Bold" size="23.0" />
             </font>
         </Button>
-      <TableView fx:id="thermometerTable" layoutX="102.0" layoutY="94.0" prefHeight="453.0" prefWidth="782.0">
+      <TableView fx:id="thermometerTable" layoutX="135.0" layoutY="99.0" prefHeight="453.0" prefWidth="786.0" AnchorPane.bottomAnchor="98.0" AnchorPane.leftAnchor="135.0" AnchorPane.rightAnchor="129.0" AnchorPane.topAnchor="99.0">
         <columns>
           <TableColumn fx:id="thermometerIdColumn" prefWidth="127.0" text="ID" />
           <TableColumn fx:id="temperatureValue" prefWidth="119.0" text="Value" />
-            <TableColumn fx:id="timeCollumn" prefWidth="115.0" text="Time" />
+            <TableColumn fx:id="timeColumn" prefWidth="115.0" text="Time" />
         </columns>
       </TableView>
     </children>
