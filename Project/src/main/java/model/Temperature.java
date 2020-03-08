@@ -6,10 +6,10 @@ import java.time.LocalTime;
 
 public class Temperature {
     private String id;
-    private Double temperature;
+    private double temperature;
     private LocalDateTime timeStamp;
 
-    public Temperature(String id, Double temperature) {
+    public Temperature(String id, double temperature) {
         this.id = id;
         this.temperature = temperature;
         timeStamp = LocalDateTime.now();
@@ -19,7 +19,7 @@ public class Temperature {
         return id;
     }
 
-    public Double getTemperature() {
+    public double getTemperature() {
         return temperature;
     }
 
