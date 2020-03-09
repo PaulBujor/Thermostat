@@ -32,9 +32,7 @@ public class ViewHandler {
                 break;
             case "secondary":
                 root = loadSecondaryView("secondary.fxml");
-            default:
-                System.out.println("hola hombre");
-                break;
+        break;
         }
         currentScene.setRoot(root);
         String title = "Temperature";

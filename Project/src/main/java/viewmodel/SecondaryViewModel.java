@@ -44,7 +44,7 @@ public class SecondaryViewModel implements PropertyChangeListener {
         return t2;
     }
 
-    //TODO
+
     private ObservableList<TableRowData> createList() {
         ObservableList<TableRowData> list = FXCollections.observableArrayList();
 
