@@ -37,8 +37,8 @@ public class TableRowData {
         return time;
     }
 
-    public Temperature getTemperature() {
-        /*  return new Temperature(thermometerIDProperty().get(),temperatureValueProperty().get(),timeStampStringProperty());*/
+    /*public Temperature getTemperature() {
+          return new Temperature(thermometerIDProperty().get(),temperatureValueProperty().get(),timeStampStringProperty());
         return null;
-    }
+    }*/
 }
