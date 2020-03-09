@@ -21,7 +21,7 @@ public class SecondaryController {
     private TableColumn<TableRowData, String> thermometerIdColumn;
     @FXML
     private TableColumn<TableRowData, Number> temperatureValue;
-    //TODO needs local date or whatever its called
+
     @FXML
     private TableColumn<TableRowData, String> timeColumn;
 
